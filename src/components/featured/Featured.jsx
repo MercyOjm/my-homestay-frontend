@@ -3,7 +3,7 @@ import "./Featured.css";
 const Featured = () => {
   return (
     <div className="featured">
-      <div className="container1">
+      <div className="featuredContainer">
         <h1>Welcome to bookMe.com</h1>
         <div className="textOne">
           <span>find and book best accommodations for your </span>

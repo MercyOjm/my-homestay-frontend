@@ -43,7 +43,7 @@ const Navbar = () => {
                 <Link className="link">SERVICES</Link>
             </div>
             <div className="rightLinks">
-                <Link className="link">Sign In</Link>
+                <Link to="/signin" className="link">Sign In</Link>
                 {!currentUser && <button>JOIN</button>}
                 {currentUser &&(
                     <div className="user" onClick={()=>setOpen(!open)}>

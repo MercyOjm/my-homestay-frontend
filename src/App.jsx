@@ -16,6 +16,7 @@ import "./App.css"
 
 
 import Footer from "./components/footer/Footer"
+import Signin from "./pages/signin/Signin";
 function App() {
 
   const Layout = ()=>{
@@ -37,6 +38,10 @@ function App() {
           element:<Home/>
         },
         {
+        path:"/signin",
+        element:<Signin/>
+      },
+      {
         path:"/hotels",
         element:<Hotels/>
       },
