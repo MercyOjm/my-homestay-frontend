@@ -64,14 +64,14 @@ img{
   font-weight: 300;
 
 }
-button {
+.joinButton {
   padding: 10px 20px;
   border-radius: 5px;
   border: 1px solid white;
   cursor: pointer;
   background-color: transparent;
 }
-button:hover {
+.joinButton:hover {
   background-color: #ff4000;
   border-color: #ff4000;
 }

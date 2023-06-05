@@ -44,7 +44,7 @@ const Navbar = () => {
             </div>
             <div className="rightLinks">
                 <Link to="/signin" className="link">Sign In</Link>
-                {!currentUser && <button>JOIN</button>}
+                {!currentUser && <button className="joinButton">JOIN</button>}
                 {currentUser &&(
                     <div className="user" onClick={()=>setOpen(!open)}>
                         <img src="https://media.licdn.com/dms/image/D4E35AQEJ7S5nxvRrMQ/profile-framedphoto-shrink_200_200/0/1678567388711?e=1686229200&v=beta&t=dS9kHYktwZ4TgM2RM4mpossSppaHQpwxFjw6UAFcluc" alt="" />
