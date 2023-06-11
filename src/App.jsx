@@ -7,16 +7,10 @@ import Register from "./pages/register/Register"
 import Account from "./pages/account/Account"
 import Reservations from "./pages/reservations/Reservations"
 import Notifications from "./pages/notifications/Notifications"
-import "./App.css"
-
-
-
-
-
-
 
 import Footer from "./components/footer/Footer"
 import Signin from "./pages/signin/Signin";
+
 function App() {
 
   const Layout = ()=>{
