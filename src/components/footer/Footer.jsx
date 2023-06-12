@@ -1,4 +1,5 @@
- import "./Footer.css"
+
+ort "./Footer.css"
  import logo from '../../images/logo-no-background.svg';
 const Footer = () => {
   return (
@@ -58,6 +59,7 @@ const Footer = () => {
         </div>
     </div>
 </div>
+
   )
 }
 

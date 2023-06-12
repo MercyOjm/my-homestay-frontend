@@ -1,3 +1,4 @@
+
 import { Link, useLocation } from "react-router-dom"
 import { useEffect } from "react";
 import { useState } from "react"
@@ -22,10 +23,12 @@ const Navbar = () => {
 
     const currentUser = {
         id: 1,
+
         username: "inspiration",
         isMember: true,
 
     }
+
     return (
         <nav className="navbar navbar-expand-lg navbar-dark bg-primary flex-sm-nowrap flex-wrap shadow-lg ">
             <div className="container-fluid">
@@ -126,6 +129,7 @@ const Navbar = () => {
             </div>
         </div> */
     )
+
 }
 
 export default Navbar

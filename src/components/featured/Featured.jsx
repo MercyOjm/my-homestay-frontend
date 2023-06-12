@@ -1,3 +1,4 @@
+
 import { faCalendarDays } from "@fortawesome/free-regular-svg-icons";
 import {
   faAngleDown,
@@ -40,6 +41,7 @@ setOptions(prev=>{
   return (
     <div className="featured">
       <div className="featuredContainer">
+
         <h1>Welcome to bookMe.com</h1>
         <div className="textOne">
           <span>find and book best accommodations for your </span>
@@ -50,6 +52,7 @@ setOptions(prev=>{
           and locations with lots of discount according to your need
         </span>
         <div className="searchLightWhite">
+
           <div className="searchWhite">
             <div className="headerSearch">
               <div className="headerSearchItem"></div>
@@ -122,6 +125,7 @@ setOptions(prev=>{
               Search
             </button>
           </div>
+
         </div>
       </div>
     </div>

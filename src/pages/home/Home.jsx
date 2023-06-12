@@ -1,3 +1,4 @@
+
 import Hero from '../../components/hero/hero';
 import Search from '../../components/search/search';
 import TopDestination from '../../components/topdestination/topdestination';
@@ -10,6 +11,7 @@ const Home = () => {
       <Search></Search>
       <TopDestination></TopDestination>
       <TourPackages></TourPackages>
+
     </div>
   )
 }
