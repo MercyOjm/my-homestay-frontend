@@ -53,10 +53,10 @@ const Navbar = () => {
                                 <i className="fa fa-user avatar" />
                             </button>
                             <ul className="dropdown-menu p-2">
-                                <li><button className="btn btn-primary btn-block" style={{ height: 47 + 'px', marginTop: -2 + 'px' }}>Login</button>
+                                <li><a href ='/signin' className="btn btn-primary btn-block" style={{ height: 47 + 'px', marginTop: -2 + 'px' }}>Login</a>
                                 </li>
                                 <li className="dropdown-divider"></li>
-                                <li><button className="btn btn-primary btn-block" style={{ height: 47 + 'px', marginTop: -2 + 'px' }}>Sign Up</button>
+                                <li><a  href ='/register' className="btn btn-primary btn-block" style={{ height: 47 + 'px', marginTop: -2 + 'px' }}>Sign Up</a>
                                 </li>
 
                             </ul>
