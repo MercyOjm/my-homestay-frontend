@@ -36,13 +36,19 @@ const Navbar = () => {
                 <div className="navbar-collapse collapse flex-grow-1 justify-content-center" id="navbar5">
                     <ul className="navbar-nav mx-auto">
                         <li className="nav-item">
-                            <a className="nav-link" href="#">Link</a>
+                            <a className="nav-link" href="#">HOME</a>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="#">Codeply</a>
+                            <a className="nav-link" href="#">PAGES</a>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="#">Link</a>
+                            <a className="nav-link" href="#">HOTELS</a>
+                        </li>
+                        <li className="nav-item">
+                            <a className="nav-link" href="#">BLOGS</a>
+                        </li>
+                        <li className="nav-item">
+                            <a className="nav-link" href="#">SERVICES</a>
                         </li>
                     </ul>
                 </div>

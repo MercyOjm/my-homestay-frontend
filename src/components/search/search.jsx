@@ -22,14 +22,14 @@ const Search = () => {
                             <div className="col-md-3">
                                 <div className="mb-3 mb-md-0">
                                     <div className="input-group date">
-                                        <input type="text" className="form-control p-4 " /><span className="input-group-addon"><i className="glyphicon glyphicon-th"></i></span>
+                                        <input type="text" className="form-control p-4 " /><span className="input-group-addon"><i className="fa fa-calendar"></i></span>
                                     </div>
                                 </div>
                             </div>
                             <div className="col-md-3">
                                 <div className="mb-3 mb-md-0">
                                 <div className="input-group date">
-                                        <input type="text" className="form-control p-4 " /><span className="input-group-addon"><i className="glyphicon glyphicon-th"></i></span>
+                                        <input type="text" className="form-control p-4 " /><span className="input-group-addon"><i className="fa fa-calendar"></i></span>
                                     </div>
                                 </div>
                             </div>
