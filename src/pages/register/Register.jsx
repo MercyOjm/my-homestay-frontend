@@ -1,6 +1,10 @@
+
 import { useState  } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+
+
+
 import './Register.css';
 
 function Register() {
@@ -15,7 +19,9 @@ function Register() {
   const [emailListEmail, setEmailListEmail] = useState('');
   const [emailListLoading, setEmailListLoading] = useState(false);
   const [emailListErrorMessage, setEmailListErrorMessage] = useState('');
+
   const navigate = useNavigate();
+ 
 
   const handleFirstNameChange = (e) => {
     setFirstName(e.target.value);
@@ -28,6 +34,7 @@ function Register() {
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
   };
+
   const handlePasswordChange = (e) => {
     setPassword(e.target.value);
   };
@@ -82,6 +89,7 @@ function Register() {
 
     setLoading(true);
     try {
+
       await axios.post('http://localhost:8080/users/signup', {
         firstName,
         lastName,
@@ -98,6 +106,7 @@ function Register() {
       } else {
         setErrorMessage('An error occurred during registration.');
       }
+
     } finally {
       setLoading(false);
     }
@@ -120,6 +129,7 @@ function Register() {
 
     setEmailListLoading(true);
     try {
+
       await axios.post('http://localhost:8080/users/subscribe', {
        
         email
@@ -134,6 +144,7 @@ function Register() {
       }
     } finally {
       setLoading(false);
+
     }
   };
 
@@ -202,6 +213,7 @@ function Register() {
   );
 }
 
+
 export default Register;
 
 
@@ -263,3 +275,5 @@ export default Register;
 
 
 // export default Register
+
+
