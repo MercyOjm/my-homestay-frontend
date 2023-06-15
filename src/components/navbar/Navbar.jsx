@@ -76,7 +76,7 @@ const Navbar = () => {
                                 Paula Wilson <b className="caret"></b>
                             </button>
                             <ul className="dropdown-menu">
-                                <li><a href="#"><i className="fa fa-user-o"></i> Profile</a></li>
+                                <li><a href="/profile"><i className="fa fa-user-o"></i> Profile</a></li>
                                 <li><a href="#"><i className="fa fa-calendar-o"></i> Calendar</a></li>
                                 <li><a href="#"><i className="fa fa-sliders"></i> Settings</a></li>
                                 <li className="dropdown-divider"></li>
