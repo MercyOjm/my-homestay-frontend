@@ -22,7 +22,7 @@
   --gray: #9aa2a8;
   --gray-dark: #343a40;
   --primary: var(--orange);
-  --secondary: var(--white);
+  --secondary: var(--light-background);
   --success: #a77f28;
   --info: #17a2b8;
   --warning: #ffc107;
