@@ -12,6 +12,7 @@ const Profile = () => {
 
   const dispatch = useAuthDispatch();
   useEffect(() => {
+    console.log(userDetails.user)
     setProfile(userDetails.user);
   }, []);
 

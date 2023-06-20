@@ -11,7 +11,7 @@ import Signin from "./pages/signin/Signin";
 import Register from "./pages/register/Register";
 import Profile from "./pages/profile/Profile.jsx";
 import { AuthProvider } from './contexts';
-import Reservations from "./pages/reservations/Reservations.jsx";
+import ReservationHost from "./pages/reservationhost/ReservationHost";
 
 
 function App() {
@@ -51,7 +51,7 @@ function App() {
       },
       {
         path:"/reservations",
-        element:<Reservations/>
+        element:<ReservationHost/>
       },
    
  
