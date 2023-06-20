@@ -10,7 +10,7 @@ import Footer from "./components/footer/Footer"
 import Signin from "./pages/signin/Signin";
 import Register from "./pages/register/Register";
 import Profile from "./pages/profile/Profile.jsx";
-import { AuthProvider } from './contexts';
+import { ProfileProvider } from './contexts';
 import ReservationHost from "./pages/reservationhost/ReservationHost";
 
 
@@ -61,9 +61,9 @@ function App() {
     },
   ]);
   return (
-    <AuthProvider>
+    <ProfileProvider>
       <RouterProvider router={router} />
-    </AuthProvider>
+    </ProfileProvider>
   );
 }
 
