@@ -12,7 +12,7 @@ const TourPackages = () => {
         <div className="container pt-5 pb-3">
             <div className="text-center mb-3 pb-3">
                 <h6 className="text-primary text-uppercase" style={{letterSpacing: 5+'px'}}>Packages</h6>
-                <h1>Pefect Tour Packages</h1>
+                <h1>Perfect Tour Packages</h1>
             </div>
             <div className="row">
                 <div className="col-lg-4 col-md-6 mb-4">
