@@ -17,6 +17,7 @@ import Transactions from "./pages/transactions/Transactions";
 import Reservation from "./pages/reservation/Reservation";
 import BookingRequest from "./pages/booking_request/BookingRequest";
 import ViewProperty from "./pages/viewProperty/viewProperty";
+import ReservationHost from "./pages/reservationhost/ReservationHost";
 
 
 function App() {
@@ -58,6 +59,10 @@ function App() {
         {
           path: "/transactions",
           element: <Transactions />,
+        },
+        {
+          path:"/reservations",
+          element:<ReservationHost/>
         },
         {
           path: "/booking-requests",
