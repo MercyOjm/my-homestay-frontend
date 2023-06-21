@@ -11,7 +11,6 @@ const Profile = () => {
   const [images, setImages] = useState([]);
 
   const dispatch = useProfileDispatch();
-
   useEffect(() => {
     console.log(userDetails.user)
     setProfile(userDetails.user);
