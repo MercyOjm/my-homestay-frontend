@@ -22,14 +22,14 @@ const Search = () => {
                             <div className="col-md-3">
                                 <div className="mb-3 mb-md-0">
                                     <div className="input-group date">
-                                        <input type="text" className="form-control p-4 " /><span className="input-group-addon"><i className="fa fa-calendar"></i></span>
+                                        <input type="text" className="form-control p-4 " /><span className="input-group-addon"><i className="fa fa-calendar"></i>Check In</span>
                                     </div>
                                 </div>
                             </div>
                             <div className="col-md-3">
                                 <div className="mb-3 mb-md-0">
                                 <div className="input-group date">
-                                        <input type="text" className="form-control p-4 " /><span className="input-group-addon"><i className="fa fa-calendar"></i></span>
+                                        <input type="text" className="form-control p-4 "/><span className="input-group-addon"><i className="fa fa-calendar"></i>Check Out</span>
                                     </div>
                                 </div>
                             </div>
@@ -39,11 +39,11 @@ const Search = () => {
                                     <input type="text" className="form-control p-4 " />
                                     </a>
                                     <ul className="dropdown-menu">
-                                        <li><a href="#"><i className="fa fa-user-o"></i> Profile</a></li>
-                                        <li><a href="#"><i className="fa fa-calendar-o"></i> Calendar</a></li>
-                                        <li><a href="#"><i className="fa fa-sliders"></i> Settings</a></li>
+                                        <li><a href="#"><i className="fa fa-user-o"></i> Adults</a></li>
+                                        <li><a href="#"><i className="fa fa-calendar-o"></i> Children</a></li>
+                                        <li><a href="#"><i className="fa fa-sliders"></i> Infants</a></li>
                                         <li className="divider"></li>
-                                        <li><a href="#"><i className="material-icons">&#xE8AC;</i> Logout</a></li>
+                                        <li><a href="#"><i className="material-icons">&#xE8AC;</i> Pets</a></li>
                                     </ul>
                                 </div>
                             </div>

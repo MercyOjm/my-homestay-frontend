@@ -2,7 +2,11 @@
 .reservation{
     margin-top: 50px;
 }
-
+.reservation-row{
+    background-color:#f5f5f5 ;
+    border-radius: 0.6em;
+    padding: 1em;
+}
 .reservation-image{
     max-width: 100%;
   height: auto;

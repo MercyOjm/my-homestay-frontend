@@ -1,4 +1,4 @@
-import "./ReservationHost.css";
+import "./Reservation.css";
 import dest1 from "../../images/destination-1.jpg";
 
 const Reservations = () => {
@@ -40,7 +40,7 @@ const Reservations = () => {
         </ul>
         <div className="tab-content reservation">
           <div id="tab-1" className="tab-pane active" role="tabpanel">
-            <div className="row">
+            <div className="row reservation-row">
               <div className="col-2 d-flex justify-content-center ">
                 <img
                   src={dest1}
@@ -50,7 +50,7 @@ const Reservations = () => {
               </div>
               <div className="col-8 d-flex flex-column justify-content-between">
                 <div>
-                  <h5>Heading</h5>
+                  <h5><strong>Heading</strong></h5>
                 </div>
                 <div className="d-flex justify-content-lg-start reservation-content">
                   <div>
@@ -83,10 +83,7 @@ const Reservations = () => {
                   type="button"
                   style={{ marginRight: 5 + "px" }}
                 >
-                  Approve
-                </button>
-                <button className="btn btn-secondary" type="button">
-                  Reject
+                  Cancel Reservation
                 </button>
               </div>
             </div>

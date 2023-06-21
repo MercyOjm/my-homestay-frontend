@@ -1,4 +1,4 @@
 import { loginUser, logout, updateProfile,uploadPic } from './action';
-import { ProfileReducer, useAuthDispatch, useAuthState } from './context';
+import { ProfileProvider, useProfileDispatch, useProfileState } from './context';
 
-export { ProfileReducer, useAuthState, useAuthDispatch, loginUser, logout, updateProfile,uploadPic };
+export { ProfileProvider, useProfileDispatch, useProfileState, loginUser, logout, updateProfile,uploadPic };

@@ -1,16 +1,16 @@
 import "./Profile.css";
 import noimage from "../../images/no-profile-picture-icon.png";
-import { updateProfile, useAuthDispatch, useAuthState,uploadPic } from "../../contexts";
+import { updateProfile, useProfileDispatch, useProfileState,uploadPic } from "../../contexts";
 import { useEffect, useState } from "react";
 import ImageUploading from "react-images-uploading";
 
 const Profile = () => {
-  const userDetails = useAuthState();
+  const userDetails = useProfileState();
   const [profile, setProfile] = useState({});
   const [message, setMessage] = useState({});
   const [images, setImages] = useState([]);
 
-  const dispatch = useAuthDispatch();
+  const dispatch = useProfileDispatch();
   useEffect(() => {
     console.log(userDetails.user)
     setProfile(userDetails.user);

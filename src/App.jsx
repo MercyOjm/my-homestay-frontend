@@ -11,7 +11,7 @@ import Signin from "./pages/signin/Signin";
 import Register from "./pages/register/Register";
 import Profile from "./pages/profile/Profile.jsx";
 import { ProfileProvider } from './contexts';
-import ReservationHost from "./pages/reservationhost/ReservationHost";
+import ReservationHost from "./pages/reservation/ReservationHost";
 
 
 function App() {
@@ -53,7 +53,10 @@ function App() {
         path:"/reservations",
         element:<ReservationHost/>
       },
-   
+      {
+        path:"/transactions",
+        element:<Transaction/>
+      },
  
   
 
