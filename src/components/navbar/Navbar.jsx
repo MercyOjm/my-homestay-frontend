@@ -66,6 +66,7 @@ const Navbar = () => {
                                 <li className="dropdown-item"><a href="/profile"><i className="fa fa-user-o"></i> Profile</a></li>
                                 <li className="dropdown-item"><a href="#"><i className="fa fa-home"></i> Properties</a></li>
                                 <li className="dropdown-item"><a href="/reservations"><i className="fa fa-calendar"></i> Reservations</a></li>
+                                <li className="dropdown-item"><a href="/booking-requests"><i className="fa fa-calendar"></i> Booking Requests</a></li>
                                 <li className="dropdown-item"><a href="/transactions"><i className="fa fa-money"></i> Transactions</a></li>
                                 <li className="dropdown-divider"></li>
                                 <li className="dropdown-item"><a href="#" onClick={handleSignout}><i className="material-icons">&#xE8AC;</i> Logout</a></li>

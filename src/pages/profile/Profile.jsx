@@ -11,6 +11,7 @@ const Profile = () => {
   const [images, setImages] = useState([]);
 
   const dispatch = useProfileDispatch();
+
   useEffect(() => {
     console.log(userDetails.user)
     setProfile(userDetails.user);
@@ -54,7 +55,7 @@ const Profile = () => {
     setImages(imageList);
     let response = await uploadPic(dispatch,profile._id,imageList[0].file)
     setProfile({
-        ...responsed
+        ...response
     })
   };
 

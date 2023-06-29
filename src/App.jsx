@@ -11,8 +11,9 @@ import Signin from "./pages/signin/Signin";
 import Register from "./pages/register/Register";
 import Profile from "./pages/profile/Profile.jsx";
 import { ProfileProvider } from './contexts';
-import ReservationHost from "./pages/reservation/ReservationHost";
-
+import Transactions from './pages/transactions/Transactions';
+import Reservation from './pages/reservation/Reservation';
+import BookingRequest from './pages/booking_request/BookingRequest';
 
 function App() {
 
@@ -51,11 +52,15 @@ function App() {
       },
       {
         path:"/reservations",
-        element:<ReservationHost/>
+        element:<Reservation/>
       },
       {
         path:"/transactions",
-        element:<Transaction/>
+        element:<Transactions/>
+      },
+      {
+        path:"/booking-requests",
+        element:<BookingRequest/>
       },
  
   
