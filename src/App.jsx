@@ -1,65 +1,59 @@
-import 'bootstrap/dist/css/bootstrap.css';
+import "bootstrap/dist/css/bootstrap.css";
 
 import "bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css";
 import "./App.css";
 import Navbar from "./components/navbar/Navbar";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
-import Home from "./pages/home/Home"
+import Home from "./pages/home/Home";
 
 import Hotels from "./pages/hotels/hotels";
 
-import Footer from "./components/footer/Footer"
+import Footer from "./components/footer/Footer";
 import Signin from "./pages/signin/Signin";
 import Register from "./pages/register/Register";
 import Profile from "./pages/profile/Profile.jsx";
-import { AuthProvider } from './contexts';
+import { AuthProvider } from "./contexts";
 import Reservations from "./pages/reservations/Reservations.jsx";
-
+import ViewProperty from "./components/property/viewProperty";
 
 function App() {
-
-  const Layout = ()=>{
-    return(
+  const Layout = () => {
+    return (
       <>
-      <Navbar/>
-      <Outlet/>
-      <Footer/>
+        <Navbar />
+        <Outlet />
+        <Footer />
       </>
-    )
-  }
+    );
+  };
   const router = createBrowserRouter([
     {
       path: "/",
-      element: <Layout/>,
-      children:[
+      element: <Layout />,
+      children: [
         {
-          path:"/",
-          element:<Home/>
+          path: "/",
+          element: <Home />,
         },
 
-        
-      {
-        path:"/signin",
-        element:<Signin/>
+        {
+          path: "/signin",
+          element: <Signin />,
+        },
+        {
+          path: "/register",
+          element: <Register />,
+        },
 
-      },
-      {
-        path:"/register",
-        element:<Register/>
-      },
-
-
-      {
-        path:"/hotels",
-        element:<Hotels/>
-      },
-
-
-   
- 
-  
-
-    ]
+        {
+          path: "/hotels",
+          element: <Hotels />,
+        },
+        {
+          path: "/property",
+          element: <ViewProperty />,
+        },
+      ],
     },
   ]);
   return (
