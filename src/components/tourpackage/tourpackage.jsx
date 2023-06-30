@@ -6,7 +6,7 @@ import pack2 from '../../images/package-2.jpg';
 import pack3 from '../../images/package-3.jpg';
 import pack4 from '../../images/package-4.jpg';
 import pack5 from '../../images/package-5.jpg';
-import pack6 from '../../images/package-5.jpg';
+import pack6 from '../../images/package-6.jpg';
 const TourPackages = () => {
     return (<div className="container-fluid py-5">
         <div className="container pt-5 pb-3">

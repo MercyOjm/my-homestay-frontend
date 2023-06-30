@@ -30,7 +30,8 @@ const Navbar = () => {
     }
 
     return (
-        <nav className="navbar navbar-expand-lg navbar-dark bg-primary flex-sm-nowrap flex-wrap shadow-lg ">
+        <nav className="navbar navbar-expand-lg navbar-dark 
+        bg-primary flex-sm-nowrap flex-wrap shadow-lg ">
             <div className="container-fluid">
                 <button className="navbar-toggler flex-grow-sm-1 flex-grow-0 me-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbar5">
                     <span className="navbar-toggler-icon"></span>
