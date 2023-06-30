@@ -5,7 +5,7 @@ import dest2 from '../../images/destination-2.jpg';
 import dest3 from '../../images/destination-3.jpg';
 import dest4 from '../../images/destination-4.jpg';
 import dest5 from '../../images/destination-5.jpg';
-import dest6 from '../../images/destination-5.jpg';
+import dest6 from '../../images/destination-6.jpg';
 
 const TopDestination = () => {
     return (
