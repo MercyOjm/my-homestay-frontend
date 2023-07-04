@@ -17,7 +17,8 @@ import Transactions from "./pages/transactions/Transactions";
 import Reservation from "./pages/reservation/Reservation";
 import BookingRequest from "./pages/booking_request/BookingRequest";
 import Reservations from "./pages/reservations/Reservations.jsx";
-import ViewProperty from "./components/property/viewProperty";
+import ViewProperty from "./pages/viewProperty/viewProperty";
+
 
 function App() {
   const Layout = () => {
@@ -69,7 +70,7 @@ function App() {
         },
         {
           path: "/property",
-          element: <ViewProperty />,
+          element: <ViewProperty/>,
         },
       ],
     },
