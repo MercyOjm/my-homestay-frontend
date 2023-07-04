@@ -14,7 +14,8 @@ import Register from "./pages/register/Register";
 import Profile from "./pages/profile/Profile.jsx";
 import { AuthProvider } from "./contexts";
 import Reservations from "./pages/reservations/Reservations.jsx";
-import ViewProperty from "./components/property/viewProperty";
+import ViewProperty from "./pages/viewProperty/viewProperty";
+
 
 function App() {
   const Layout = () => {
@@ -51,7 +52,7 @@ function App() {
         },
         {
           path: "/property",
-          element: <ViewProperty />,
+          element: <ViewProperty/>,
         },
       ],
     },

@@ -6,6 +6,8 @@ let user = localStorage.getItem('currentUser')
 let token = localStorage.getItem('currentUser')
     ? JSON.parse(localStorage.getItem('currentUser')).auth_token
     : '';
+    let property= localStorage.getItem('property')
+    ?JSON.parse(localStorage.getItem('property')): '';
 
 export const initialState = {
     user: '' || user,
@@ -13,6 +15,7 @@ export const initialState = {
     loading: false,
     errorMessage: null,
     updateObject:'',
+    property:'' || property,
 };
 
 export const AuthReducer = (initialState, action) => {
@@ -69,7 +72,15 @@ export const AuthReducer = (initialState, action) => {
                 user:action.payload
                 
             };
-
+            case 'PROPERTY_VIEW':
+                console.log(action.payload)
+                return {
+                    ...initialState,
+                    loading: false,
+                    property:action.payload
+                    
+                };
+    
         default:
             throw new Error(`Unhandled action type: ${action.type}`);
     }
