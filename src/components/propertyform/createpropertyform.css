@@ -1,0 +1,549 @@
+.form {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h2 {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.input-field {
+  margin-bottom: 15px;
+}
+
+.button-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Add this line to vertically center the items */
+  margin-bottom: 20px;
+}
+
+.button-row button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+.button-row button i {
+  margin-right: 5px;
+}
+
+.button-row button.active {
+  background-color: #ccc;
+}
+
+.country-select {
+  display: flex;
+  align-items: center;
+}
+
+.country-select input {
+  flex: 1;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px 0 0 5px;
+  border: none;
+}
+
+.country-select-btn {
+  padding: 10px 15px;
+  font-size: 16px;
+  border-radius: 0 5px 5px 0;
+  border: none;
+  background-color: #ccc;
+  cursor: pointer;
+}
+
+.country-select-btn i {
+  transform: rotate(90deg);
+}
+
+.submit-button {
+  padding: 10px 20px;
+  font-size: 18px;
+  border-radius: 5px;
+  border: none;
+  background-color: #3498db;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Facility Buttons */
+.facilities-row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.facility-item {
+  width: 25%;
+  padding: 5px;
+}
+
+.facility-item button {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  background-color: #ccc;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  position: relative;
+  outline: none;
+}
+
+.facility-item button .property-button-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: orange;
+  padding: 5px;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+.facility-item button .property-button-icon-svg {
+  flex-shrink: 0;
+  color: #fff;
+}
+
+.facility-item button .property-button-text {
+  margin-left: auto;
+  margin-right: 2px;
+}
+
+.facility-item button:focus,
+.facility-item button:active {
+  box-shadow: 0 0 0 2px orange;
+}
+
+.facility-item button:hover {
+  background-color: #ccc;
+  color: #fff;
+}
+
+
+/* Property Buttons */
+
+.property-button {
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  background-color: #ccc;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  position: relative;
+  outline: none; /* Remove default focus outline */
+}
+
+.property-button-icon {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center; /* Use justify-content instead of align-items */
+  background-color: orange;
+  padding: 5px;
+  border-radius: 5px 0 0 5px;
+  z-index: 1;
+}
+
+.property-button-icon svg {
+  flex-shrink: 0;
+  color: #fff;
+}
+
+.property-button-text {
+  margin-left: 30px;
+}
+
+
+.property-button:focus,
+.property-button:active {
+  box-shadow: 0 0 0 2px orange; /* Add orange border on focus and active */
+}
+
+.property-button:hover {
+  background-color: #ccc;
+  color: #fff;
+}
+
+/* Image Upload and Preview */
+
+.image-upload {
+  display: flex;
+  align-items: center;
+}
+
+.image-upload input[type="file"] {
+  display: none;
+}
+
+.upload-icon {
+  width: 30px;
+  height: 30px;
+  background-color: orange;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px 0 0 5px;
+  cursor: pointer;
+}
+
+.upload-icon svg {
+  color: #fff;
+}
+
+.upload-label {
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 0 5px 5px 0;
+  border: none;
+  background-color: orange;
+  color: #fff;
+  cursor: pointer;
+}
+
+.image-preview {
+  display: flex;
+  margin-top: 20px;
+}
+
+.image-item {
+  position: relative;
+  width: 150px;
+  height: 90px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  background-color: #ccc;
+}
+
+.image-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.remove-button {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border: none;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.remove-button:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.remove-button svg {
+  color: #fff;
+  font-size: 16px;
+}
+
+@media (max-width: 768px) {
+  .facility-item {
+    width: 50%;
+  }
+}
+.form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .input-field {
+    margin-bottom: 15px;
+  }
+  
+  .button-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Add this line to vertically center the items */
+    margin-bottom: 20px;
+  }
+  
+  .button-row button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .button-row button i {
+    margin-right: 5px;
+  }
+  
+  .button-row button.active {
+    background-color: #ccc;
+  }
+  
+  .country-select {
+    display: flex;
+    align-items: center;
+  }
+  
+  .country-select input {
+    flex: 1;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px 0 0 5px;
+    border: none;
+  }
+  
+  .country-select-btn {
+    padding: 10px 15px;
+    font-size: 16px;
+    border-radius: 0 5px 5px 0;
+    border: none;
+    background-color: #ccc;
+    cursor: pointer;
+  }
+  
+  .country-select-btn i {
+    transform: rotate(90deg);
+  }
+  
+  .submit-button {
+    padding: 10px 20px;
+    font-size: 18px;
+    border-radius: 5px;
+    border: none;
+    background-color: #3498db;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  /* Facility Buttons */
+  .facilities-row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+  }
+  
+  .facility-item {
+    width: 25%;
+    padding: 5px;
+  }
+  
+  .facility-item button {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    background-color: #ccc;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    position: relative;
+    outline: none;
+  }
+  
+  .facility-item button .property-button-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: orange;
+    padding: 5px;
+    border-radius: 5px;
+    margin-right: 10px;
+  }
+  
+  .facility-item button .property-button-icon-svg {
+    flex-shrink: 0;
+    color: #fff;
+  }
+  
+  .facility-item button .property-button-text {
+    margin-left: auto;
+    margin-right: 2px;
+  }
+  
+  .facility-item button:focus,
+  .facility-item button:active {
+    box-shadow: 0 0 0 2px orange;
+  }
+  
+  .facility-item button:hover {
+    background-color: #ccc;
+    color: #fff;
+  }
+  
+  
+  /* Property Buttons */
+  
+  .property-button {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    background-color: #ccc;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    position: relative;
+    outline: none; /* Remove default focus outline */
+  }
+  
+  .property-button-icon {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center; /* Use justify-content instead of align-items */
+    background-color: orange;
+    padding: 5px;
+    border-radius: 5px 0 0 5px;
+    z-index: 1;
+  }
+  
+  .property-button-icon svg {
+    flex-shrink: 0;
+    color: #fff;
+  }
+  
+  .property-button-text {
+    margin-left: 30px;
+  }
+  
+  
+  .property-button:focus,
+  .property-button:active {
+    box-shadow: 0 0 0 2px orange; /* Add orange border on focus and active */
+  }
+  
+  .property-button:hover {
+    background-color: #ccc;
+    color: #fff;
+  }
+  
+  /* Image Upload and Preview */
+  
+  .image-upload {
+    display: flex;
+    align-items: center;
+  }
+  
+  .image-upload input[type="file"] {
+    display: none;
+  }
+  
+  .upload-icon {
+    width: 30px;
+    height: 30px;
+    background-color: orange;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px 0 0 5px;
+    cursor: pointer;
+  }
+  
+  .upload-icon svg {
+    color: #fff;
+  }
+  
+  .upload-label {
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 0 5px 5px 0;
+    border: none;
+    background-color: orange;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  .image-preview {
+    display: flex;
+    margin-top: 20px;
+  }
+  
+  .image-item {
+    position: relative;
+    width: 150px;
+    height: 90px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    background-color: #ccc;
+  }
+  
+  .image-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .remove-button {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .remove-button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+  
+  .remove-button svg {
+    color: #fff;
+    font-size: 16px;
+  }
+  
+  @media (max-width: 768px) {
+    .facility-item {
+      width: 50%;
+    }
+  }
+  

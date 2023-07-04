@@ -1,0 +1,102 @@
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .property-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .property-description {
+    margin-bottom: 20px;
+  }
+  
+  .property-details {
+    display: flex;
+    margin-bottom: 20px;
+  }
+  
+  .property-details-item {
+    flex: 1;
+    margin-right: 20px;
+  }
+  
+  .property-details-label {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .property-details-value {
+    margin-bottom: 10px;
+  }
+  
+  .property-amenities {
+    margin-bottom: 20px;
+  }
+  
+  .property-amenities-label {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .property-amenities-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .property-amenities-item {
+    margin-bottom: 5px;
+  }
+  
+  .property-amenities-icon {
+    margin-right: 5px;
+  }
+  
+  .property-price {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .property-image {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  .property-image img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .property-form {
+    margin-bottom: 20px;
+  }
+  
+  .property-form-label {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .property-form-input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .property-form-button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .property-form-button:hover {
+    background-color: #0056b3;
+  }
+  
