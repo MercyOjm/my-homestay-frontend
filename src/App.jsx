@@ -6,17 +6,25 @@ import Navbar from "./components/navbar/Navbar";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import Home from "./pages/home/Home";
 
-import Hotels from "./pages/hotels/hotels";
+import HotelPage from "./pages/hotels/hotels";
 
 import Footer from "./components/footer/Footer";
 import Signin from "./pages/signin/Signin";
 import Register from "./pages/register/Register";
 import Profile from "./pages/profile/Profile.jsx";
+<<<<<<< HEAD
 import { ProfileProvider } from "./contexts";
 import Transactions from "./pages/transactions/Transactions";
 import Reservation from "./pages/reservation/Reservation";
 import BookingRequest from "./pages/booking_request/BookingRequest";
 import ViewProperty from "./pages/viewProperty/viewProperty";
+=======
+import { ProfileProvider } from './contexts';
+import Transactions from './pages/transactions/Transactions';
+import Reservation from './pages/reservation/Reservation';
+import BookingRequest from './pages/booking_request/BookingRequest';
+import Payment from './pages/payments/payments';
+>>>>>>> booking-payment
 
 
 function App() {
