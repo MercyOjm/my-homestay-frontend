@@ -51,7 +51,7 @@ function App() {
           element: <Hotels />,
         },
         {
-          path: "/property",
+          path: "/property/:propertyId",
           element: <ViewProperty/>,
         },
       ],
