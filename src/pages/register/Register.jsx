@@ -90,11 +90,11 @@ function Register() {
     setLoading(true);
     try {
 
-      await axios.post('http://localhost:8080/users/signup', {
+      await axios.post('http://localhost:4040/api/signup', {
         firstName,
         lastName,
         email,
-        password
+        password, confirmPassword
       }, {
         withCredentials: true
       });
