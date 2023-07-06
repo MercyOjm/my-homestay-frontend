@@ -12,15 +12,10 @@ import Footer from "./components/footer/Footer";
 import Signin from "./pages/signin/Signin";
 import Register from "./pages/register/Register";
 import Profile from "./pages/profile/Profile.jsx";
-<<<<<<< HEAD
 import { ProfileProvider } from "./contexts";
 import Transactions from "./pages/transactions/Transactions";
 import Reservation from "./pages/reservation/Reservation";
 import BookingRequest from "./pages/booking_request/BookingRequest";
-=======
-import { AuthProvider } from "./contexts";
->>>>>>> 0d723c265facf7c400cd5f60c55434782afd946c
-import Reservations from "./pages/reservations/Reservations.jsx";
 import ViewProperty from "./pages/viewProperty/viewProperty";
 
 

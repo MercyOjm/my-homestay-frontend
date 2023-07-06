@@ -1,5 +1,5 @@
 import PropertyMap from "../../components/googlemap/map";
-import { useAuthDispatch, useAuthState } from "../../contexts";
+import { useProfileDispatch, useProfileState } from "../../contexts";
 import { propertyView } from "../../contexts/action";
 import { useEffect, useState } from "react";
 import ImageGallery from "../../components/imageGallery/imageGallery";
@@ -18,9 +18,9 @@ const ViewProperty = (props) => {
   const [infantCount, setInfantCount] = useState(0);
   const [guestCount, setGuestCount] = useState("Guests");
 
-  const details = useAuthState();
+  const details = useProfileState();
 
-  const dispatch = useAuthDispatch();
+  const dispatch = useProfileDispatch();
   const { propertyId } = useParams();
   const [dateRange, setDateRange] = useState([
     {
