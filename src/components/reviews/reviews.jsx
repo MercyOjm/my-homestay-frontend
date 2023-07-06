@@ -1,7 +1,7 @@
 import "./reviews.css";
 
 const Reviews = (props) => {
-console.log(props)
+// console.log(props)
 
   return (
     <div id="reviews" class="review-section">
@@ -16,9 +16,9 @@ console.log(props)
       <ul class="stars-counters row">
      
       <li class="col-6 d-flex align-items-center ">
-          <span className="flex-shrink-1">Accuracy</span>
+          <span className="col-6"><strong>Accuracy</strong></span>
 
-          <div class="progress-bar-container">
+          <div class="progress-bar-container col-6">
             <div class="fit-progressbar fit-progressbar-bar star-progress-bar">
               <div class="fit-progressbar-background">
                 <span
@@ -30,7 +30,7 @@ console.log(props)
           </div>
         </li>
          <li class="col-6 d-flex align-items-center mt-3">
-          <span>Cleanliness</span>
+          <span className="col-6"><strong>Cleanliness</strong></span>
 
           <div class="progress-bar-container">
             <div class="fit-progressbar fit-progressbar-bar star-progress-bar">
@@ -44,7 +44,7 @@ console.log(props)
           </div>
         </li>
         <li class="col-6 d-flex align-items-center">
-          <span>Communication</span>
+          <span className="col-6"><strong>Communication</strong></span>
 
           <div class="progress-bar-container">
             <div class="fit-progressbar fit-progressbar-bar star-progress-bar">
@@ -58,7 +58,7 @@ console.log(props)
           </div>
         </li>
         <li class="col-6 d-flex align-items-center mt-3">
-          <span>Checkin</span>
+          <span className="col-6"><strong>Checkin</strong></span>
 
           <div class="progress-bar-container">
             <div class="fit-progressbar fit-progressbar-bar star-progress-bar">
@@ -72,7 +72,7 @@ console.log(props)
           </div>
         </li>
         <li class="col-6 d-flex align-items-center mt-3">
-          <span>Location</span>
+          <span className="col-6"><strong>Location</strong></span>
 
           <div class="progress-bar-container">
             <div class="fit-progressbar fit-progressbar-bar star-progress-bar">
@@ -86,7 +86,7 @@ console.log(props)
           </div>
         </li>
         <li class="col-6 d-flex align-items-center mt-3">
-          <span>Rating</span>
+          <span className="col-6"><strong>Overall Rating</strong></span>
 
           <div class="progress-bar-container">
             <div class="fit-progressbar fit-progressbar-bar star-progress-bar">
@@ -100,7 +100,7 @@ console.log(props)
           </div>
         </li>
         <li class="col-6 d-flex align-items-center mt-3">
-          <span>value</span>
+          <span className="col-6"><strong>Value to money</strong></span>
 
           <div class="progress-bar-container">
             <div class="fit-progressbar fit-progressbar-bar star-progress-bar">

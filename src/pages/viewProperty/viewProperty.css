@@ -26,3 +26,19 @@ hr{
     width:50%;
     
 }
+.booking-panel .col-6 {
+padding:0
+}
+.booking-panel input[type="text"] {
+    height: calc(2.5em + 0.75rem + 2px)!important;
+}
+.btn-flex {
+    display: flex;
+    align-items: stretch;
+    align-content: stretch;
+  }
+  
+    .btn-flex .btn:first-child {
+      flex-grow: 1;
+      text-align: left;
+    }
