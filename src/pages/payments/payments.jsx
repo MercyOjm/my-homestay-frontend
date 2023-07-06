@@ -1,159 +1,3 @@
-// import React, { useState, useEffect } from "react";
-// import "./payment.css";
-
-// const Payment = () => {
-// const [paymentMethod, setPaymentMethod] = useState("");
-// const [showDropdown, setShowDropdown] = useState(false);
-
-// const handleInputChange = (e) => {
-// setPaymentMethod(e.target.value);
-// };
-
-// const handleDropdownToggle = () => {
-// setShowDropdown(!showDropdown);
-// };
-
-// const handleDropdownSelect = (method) => {
-// setPaymentMethod(method);
-// setShowDropdown(false);
-// };
-
-// const paymentMethods = ["Credit Card", "Paypal", "Bank Transfer"];
-
-// useEffect(() => {
-// window.scrollTo(0, 0);
-// }, []);
-
-// const calculateTotalPrice = () => {
-// // Your calculation logic here
-// const basePrice = 100;
-// const cleaningFee = 50;
-// const serviceFee = 10;
-// const total = basePrice + cleaningFee + serviceFee;
-// return total;
-// };
-
-// return (
-// <div className="payment">
-// <h1 className="text-center text-success my-5">Confirm and Pay</h1>
-// <div class="container">
-// <div class="row">
-// <div class="col-md-6">
-// <h4>Your Trip</h4>
-// <div class="card" style={{ width: "100%" }}>
-// <ul class="list-group list-group-flush">
-// <li class="list-group-item">
-// Dates <span class="btn btn-primary">Edit</span>
-// </li>
-// <p>
-// Start-date <span>06-07-2023</span>
-// </p>
-// <p>
-// End-date <span>06-07-2023</span>
-// </p>
-// <li class="list-group-item">
-// Guests <span class="btn btn-primary">Edit</span>
-// </li>
-// <p>
-// Number of guest <span>6</span>
-// </p>
-// <p>
-// Extra people <span>2</span>
-// </p>
-
-// <li class="list-group-item">
-// Cleaning Fee <span>€ 50</span>
-// </li>
-// <li class="list-group-item">
-// Service Fee <span>€ 10 </span>
-// </li>
-// </ul>
-// <hr />
-// <div className="payment-form">
-// <label htmlFor="paymentInput">Payment Method:</label>
-// <div className="payment-input-container">
-// <input
-// type="text"
-// id="paymentInput"
-// value={paymentMethod}
-// onChange={handleInputChange}
-// placeholder="Select payment method..."
-// />
-// <div
-// className="payment-dropdown"
-// onClick={handleDropdownToggle}
-// >
-// <button type="submit">
-// {" "}
-// <i className="fas fa-chevron-down"></i>
-// </button>
-// </div>
-
-// {showDropdown && (
-// <div className="payment__dropdown-menu">
-// {paymentMethods.map((method) => (
-// <div
-// key={method}
-// className="payment__dropdown-item"
-// onClick={() => handleDropdownSelect(method)}
-// >
-// {method}
-// </div>
-// ))}
-// </div>
-// )}
-// </div>
-// </div>
-// </div>
-// </div>
-// <div className="payment__price-details">
-// <div class="col-md-6">
-// <div class="card" style={{ width: "100%" }}>
-// <img
-// src="https://www.airbnb.com/rooms/10006546"
-// class="card-img-top"
-// alt="booking-image"
-// />
-// <div class="card-body">
-// <h5 class="card-title">Ribeira Charming Duplex</h5>
-// <p class="card-text">
-// Some quick example text to build on the card title and
-// make up the bulk of the card's content.
-// </p>
-// </div>
-// <ul class="list-group list-group-flush">
-// <li class="list-group-item">
-// Price <span>€ 100</span>
-// </li>
-// <li class="list-group-item">
-// Cleaning Fee <span>€ 50</span>
-// </li>
-// <li class="list-group-item">
-// Service Fee <span>€ 10 </span>
-// </li>
-// <li class="list-group-item">
-// Total: <span>€ {calculateTotalPrice()} </span>
-// </li>
-// </ul>
-// </div>
-// </div>
-// </div>
-// <h5>Cancellation Policy</h5>
-// <h6>Free cancellation until 24 hours before check-in</h6>
-// <p>
-// By selecting the button below, I agree to the updated terms of
-// service, payment terms of service, and acknowledge the privacy
-// policy.
-// </p>
-// <button className="btn btn-primary">Request to Book</button>
-// </div>
-// </div>
-// </div>
-// );
-// };
-
-// export default Payment;
-
 import { useState, useEffect } from "react";
 import "./payments.css";
 
@@ -190,7 +34,7 @@ const Payment = () => {
   };
 
   return (
-    <div className="container border border-end-0">
+    <div className="container ">
       <h1 className="text-center text-success my-5">Confirm and Pay</h1>
       <div className="container">
         <div className="row">
@@ -240,12 +84,6 @@ const Payment = () => {
                     2
                   </span>
                 </li>
-                {/* <li className="list-group-item">
-Cleaning Fee <span style={{marginLeft:'70%'}}>€ 50</span>
-</li>
-<li className="list-group-item">
-Service Fee <span style={{marginLeft:'70%'}}>€ 10 </span>
-</li> */}
               </ul>
             </div>
           </div>
@@ -318,33 +156,8 @@ Service Fee <span style={{marginLeft:'70%'}}>€ 10 </span>
                     ))}
                   </div>
                 )}
-                {/* <li><a class="dropdown-item" href="#">Action</a></li>
-<li><a class="dropdown-item" href="#">Another action</a></li>
-<li><a class="dropdown-item" href="#">Something else here</a></li>
-<li><hr class="dropdown-divider"></li>
-<li><a class="dropdown-item" href="#">Separated link</a></li> */}
               </ul>
             </div>
-            {/* <div className="payment-input-container">
-<input
-type="text"
-id="paymentInput"
-value={paymentMethod}
-onChange={handleInputChange}
-placeholder="Select payment method..."
-/>
-<div
-className="payment-dropdown"
-onClick={handleDropdownToggle}
->
-<button type="submit">
-{" "}
-<i className="fas fa-chevron-down"></i>
-</button>
-</div> */}
-
-            {/* </div>
-</div> */}
             <h5 style={{ marginTop: "100px" }}>Cancellation Policy</h5>
             <h6 style={{ marginTop: "20px" }}>
               Free cancellation until 24 hours before check-in
@@ -392,9 +205,51 @@ onClick={handleDropdownToggle}
               service, payment terms of service, and acknowledge the privacy
               policy.
             </p>
-            <button className="btn btn-primary" style={{ marginTop: "20px" }}>
-              Request to Book
+            <button
+              type="button"
+              class="btn btn-primary"
+              data-bs-toggle="modal"
+              data-bs-target="#exampleModal"
+            >
+              Request to book
             </button>
+
+            <div
+              class="modal fade"
+              id="exampleModal"
+              tabindex="-1"
+              aria-labelledby="exampleModalLabel"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">
+                      Booking confirmation
+                    </h1>
+                    <button
+                      type="button"
+                      class="btn-close"
+                      data-bs-dismiss="modal"
+                      aria-label="Close"
+                    ></button>
+                  </div>
+                  <div class="modal-body">
+                    <h5>Your booking has been successfully confirmed!</h5>
+                  </div>
+                  <div class="modal-footer">
+                    <button
+                      type="button"
+                      class="btn btn-primary"
+                      data-bs-dismiss="modal"
+                    >
+                      OK
+                    </button>
+                    {/* <button type="button" class="btn btn-primary">Save changes</button> */}
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
