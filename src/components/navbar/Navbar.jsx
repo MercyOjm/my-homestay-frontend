@@ -7,7 +7,7 @@ import "./Navbar.css"
 import logo from '../../images.hotels/logo-no-background.svg';
 
 
-import logo from '../../images/logo-no-background.svg';
+//import logo from '../../images/logo-no-background.svg';
 import { logout, useAuthState, useAuthDispatch } from '../../contexts';
 import { useNavigate } from 'react-router-dom';
 import noimage from '../../images/no-profile-picture-icon.png';
@@ -33,7 +33,7 @@ const Navbar = () => {
             console.log(e)
         }
 
-    }, []);
+    }
 
     // const currentUser = {
     //     id: 1,
