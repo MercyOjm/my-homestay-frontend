@@ -36,27 +36,16 @@ const Navbar = () => {
                 <button className="navbar-toggler flex-grow-sm-1 flex-grow-0 me-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbar5">
                     <span className="navbar-toggler-icon"></span>
                 </button>
-                <span className="navbar-brand flex-grow-1"><img className="logo-img" src={logo} style={{ maxHeight: 30 + 'px' }} /></span>
+                <span className="navbar-brand flex-grow-1"><img className="logo-img" src={logo} style={{ maxHeight: 30 + 'px' }} />
+               
+                </span>
                 <div className="navbar-collapse collapse flex-grow-1 justify-content-center" id="navbar5">
                     <ul className="navbar-nav mx-auto">
                         <li className="nav-item">
-                            <a className="nav-link" href="#">HOME</a>
+                            <a className="nav-link" href="/">HOME</a>
                         </li>
-                        <li className="nav-item">
-                            <a className="nav-link" href="#">PAGES</a>
-                        </li>
-                        <li className="nav-item">
-                            <a className="nav-link" href="/hotels">HOTELS</a>
-                        </li>
-                        <li className="nav-item">
-                            <a className="nav-link" href="#">BLOGS</a>
-                        </li>
-                        <li className="nav-item">
-                            <a className="nav-link" href="#">SERVICES</a>
-                        </li>
-                        <li className="nav-item">
-                            <a className="nav-link" href="/property">Property</a>
-                        </li>
+                      
+                       
                     </ul>
                 </div>
                 <div className="navbar-collapse collapse order-3 dual-collapse2 flex-grow-1">
@@ -67,11 +56,11 @@ const Navbar = () => {
                                {userDetails.user.first_name} {userDetails.user.last_name}<b className="caret"></b>
                             </button>
                             <ul className="dropdown-menu dropdown-menu-lg-end">
-                                <li className="dropdown-item"><a href="/profile"><i className="fa fa-user-o"></i> Profile</a></li>
+                                <li className="dropdown-item"><a href="/profile"><i className="fa fa-user"></i> Profile</a></li>
                                 <li className="dropdown-item"><a href="#"><i className="fa fa-home"></i> Properties</a></li>
                                 <li className="dropdown-item"><a href="/reservations"><i className="fa fa-calendar"></i> Reservations</a></li>
-                                <li className="dropdown-item"><a href="/booking-requests"><i className="fa fa-calendar"></i> Booking Requests</a></li>
-                                <li className="dropdown-item"><a href="/transactions"><i className="fa fa-money"></i> Transactions</a></li>
+                                <li className="dropdown-item"><a href="/booking-requests"><i className="fa fa-check"></i> Booking Requests</a></li>
+                                <li className="dropdown-item"><a href="/transactions"><i className="fa fa-euro"></i> Transactions</a></li>
                                 <li className="dropdown-divider"></li>
                                 <li className="dropdown-item"><a href="#" onClick={handleSignout}><i className="material-icons">&#xE8AC;</i> Logout</a></li>
                             </ul>

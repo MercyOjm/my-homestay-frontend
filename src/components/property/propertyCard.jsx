@@ -11,7 +11,7 @@ const PropertyCard = ({ property }) => {
                 {property.security_deposit ? "" : "No Deposite"}
               </span>
               <span class="wishlist">
-                <i class="fa fa-heart-o"></i>
+                <i class="fa fa-heart" aria-hidden="true" style={{color:'#bdafaf'}}></i>
               </span>
             </div>
           </div>
@@ -47,7 +47,7 @@ const PropertyCard = ({ property }) => {
 
             <div class="d-flex justify-content-between align-items-center pt-1">
               <div>
-                <i class="fa fa-star-o rating-star mr-1"></i>
+                <i class="fa fa-star rating-star mr-1"></i>
                 <span class="rating-number">
                   {property.review_scores.review_scores_rating / 20}
                 </span>
@@ -58,7 +58,7 @@ const PropertyCard = ({ property }) => {
                 <small class="old-price text-right"></small>
               </div>
             </div>
-            <a href={"/property/"+property._id} class="btn btn-primary stretched-link text-decoration-none">
+            <a href={"/property/"+property._id} class="stretched-link text-decoration-none">
               </a>
           </div>
           

@@ -150,8 +150,8 @@ function Register() {
   };
 
   return (
-    <div className="register-page">
-      <div className="register-form">
+    <div className="container register-page">
+      <div className="col-6 register-form">
         <h2 style={{ fontFamily: 'Montserrat' }}>Sign Up</h2>
         <p style={{ fontFamily: 'Montserrat' }}>Login or create a new bookMe.com account</p>
         {errorMessage && <p className="error-message" style={{ fontFamily: 'Montserrat' }}>{errorMessage}</p>}
@@ -194,7 +194,7 @@ function Register() {
           </button>
         </form>
       </div>
-      <div className="email-list-form" >
+      <div className="col-6 email-list-form" >
         <p style={{ fontFamily: 'Montserrat' }}>Subscribe to our Newsletter</p>
         <p style={{ fontFamily: 'Montserrat' }}>Join our mailing list for the latest product updates</p>
         {emailListErrorMessage && <p className="error-message" style={{ fontFamily: 'Montserrat' }}>{emailListErrorMessage}</p>}

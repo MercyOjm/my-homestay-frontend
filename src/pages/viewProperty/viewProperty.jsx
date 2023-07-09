@@ -39,9 +39,7 @@ const ViewProperty = (props) => {
     $(".date").datepicker({});
   }, []);
   useEffect(() => {
-    setGuestCount(
-      `${adultCount+childCount} Guests, ${infantCount} Infants`
-    );
+    setGuestCount(`${adultCount + childCount} Guests, ${infantCount} Infants`);
   });
 
   const increment = function (e) {
@@ -126,134 +124,129 @@ const ViewProperty = (props) => {
         <div className="col-4">
           <div className="card h-100">
             <div className="card-body d-flex flex-column justify-content-between">
-              
-                <h6 className="text-uppercase text-muted">Standard</h6>
-                <h4 className="display-6 fw-bold">€{details.property.price}</h4>
-                <hr></hr>
+              <h6 className="text-uppercase text-muted">Standard</h6>
+              <h4 className="display-6 fw-bold">€{details.property.price}</h4>
+              <hr></hr>
 
-                <DateRange
-                  editableDateInputs={false}
-                  moveRangeOnFirstSelection={false}
-                  onChange={(item) => setDateRange([item.selection])}
-                  ranges={dateRange}
-                  startDatePlaceholder="Check-In"
-                  endDatePlaceholder="Check-Out"
-                />
+              <DateRange
+                editableDateInputs={false}
+                moveRangeOnFirstSelection={false}
+                onChange={(item) => setDateRange([item.selection])}
+                ranges={dateRange}
+                startDatePlaceholder="Check-In"
+                endDatePlaceholder="Check-Out"
+              />
 
-                <div class="dropdown">
-                  <input
-                    class="btn btn-secondary btn-block"
-                    type="text"
-                    readOnly
-                    value={guestCount}
-                    id="dropdownMenuButton"
-                    data-bs-toggle="dropdown"
-                    aria-haspopup="true"
-                    aria-expanded="false"
-                  ></input>
-                  <div
-                    class="dropdown-menu"
-                    aria-labelledby="dropdownMenuButton"
-                  >
-                    <div class="row p-4">
-                      <div class="col-12">
-                        <div class="d-flex justify-content-between">
-                          <div>
-                            <p class="text-dark">Adults</p>
-                          </div>
-                          <div class="input-group w-auto justify-content-end align-items-center">
-                            <input
-                              name="adult"
-                              type="button"
-                              value="-"
-                              class="button-minus border rounded-circle  icon-shape icon-sm mx-1 "
-                              data-field="quantity"
-                              onClick={decrement}
-                            />
-                            <input
-                              type="text"
-                              readOnly
-                              value={adultCount}
-                              name="quantity"
-                              class="quantity-field border-0 text-center w-25"
-                            />
-                            <input
-                              name="adult"
-                              type="button"
-                              value="+"
-                              class="button-plus border rounded-circle icon-shape icon-sm "
-                              data-field="quantity"
-                              onClick={increment}
-                            />
-                          </div>
+              <div class="dropdown">
+                <input
+                  class="btn btn-secondary btn-block"
+                  type="text"
+                  readOnly
+                  value={guestCount}
+                  id="dropdownMenuButton"
+                  data-bs-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                ></input>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <div class="row p-4">
+                    <div class="col-12">
+                      <div class="d-flex justify-content-between">
+                        <div>
+                          <p class="text-dark">Adults</p>
                         </div>
-                      </div>
-                      <div class="col-12">
-                        <div class="d-flex justify-content-between">
-                          <div>
-                            <p class="text-dark">Children</p>
-                          </div>
-                          <div class="input-group w-auto justify-content-end align-items-center">
-                            <input
-                              name="child"
-                              type="button"
-                              value="-"
-                              class="button-minus border rounded-circle  icon-shape icon-sm mx-1 "
-                              data-field="quantity"
-                              onClick={decrement}
-                            />
-                            <input
-                              type="text"
-                              readOnly
-                              value={childCount}
-                              name="quantity"
-                              class="quantity-field border-0 text-center w-25"
-                            />
-                            <input
-                              name="child"
-                              type="button"
-                              value="+"
-                              class="button-plus border rounded-circle icon-shape icon-sm lh-0"
-                              data-field="quantity"
-                              onClick={increment}
-                            />
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-12">
-                        <div class="d-flex justify-content-between">
-                          <div>
-                            <p class="text-dark">Infants</p>
-                          </div>
-                          <div class="input-group w-auto justify-content-end align-items-center">
-                            <input
-                              name="infant"
-                              type="button"
-                              value="-"
-                              class="button-minus border rounded-circle  icon-shape icon-sm mx-1 "
-                              data-field="quantity"
-                              onClick={decrement}
-                            />
-                            <input
-                              type="text"
-                              readOnly
-                              value={infantCount}
-                              name="quantity"
-                              class="quantity-field border-0 text-center w-25"
-                            />
-                            <input
-                              name="infant"
-                              type="button"
-                              value="+"
-                              class="button-plus border rounded-circle icon-shape icon-sm lh-0"
-                              data-field="quantity"
-                              onClick={increment}
-                            />
-                          </div>
+                        <div class="input-group w-auto justify-content-end align-items-center">
+                          <input
+                            name="adult"
+                            type="button"
+                            value="-"
+                            class="button-minus border rounded-circle  icon-shape icon-sm mx-1 "
+                            data-field="quantity"
+                            onClick={decrement}
+                          />
+                          <input
+                            type="text"
+                            readOnly
+                            value={adultCount}
+                            name="quantity"
+                            class="quantity-field border-0 text-center w-25"
+                          />
+                          <input
+                            name="adult"
+                            type="button"
+                            value="+"
+                            class="button-plus border rounded-circle icon-shape icon-sm "
+                            data-field="quantity"
+                            onClick={increment}
+                          />
                         </div>
                       </div>
                     </div>
-                  
+                    <div class="col-12">
+                      <div class="d-flex justify-content-between">
+                        <div>
+                          <p class="text-dark">Children</p>
+                        </div>
+                        <div class="input-group w-auto justify-content-end align-items-center">
+                          <input
+                            name="child"
+                            type="button"
+                            value="-"
+                            class="button-minus border rounded-circle  icon-shape icon-sm mx-1 "
+                            data-field="quantity"
+                            onClick={decrement}
+                          />
+                          <input
+                            type="text"
+                            readOnly
+                            value={childCount}
+                            name="quantity"
+                            class="quantity-field border-0 text-center w-25"
+                          />
+                          <input
+                            name="child"
+                            type="button"
+                            value="+"
+                            class="button-plus border rounded-circle icon-shape icon-sm lh-0"
+                            data-field="quantity"
+                            onClick={increment}
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-12">
+                      <div class="d-flex justify-content-between">
+                        <div>
+                          <p class="text-dark">Infants</p>
+                        </div>
+                        <div class="input-group w-auto justify-content-end align-items-center">
+                          <input
+                            name="infant"
+                            type="button"
+                            value="-"
+                            class="button-minus border rounded-circle  icon-shape icon-sm mx-1 "
+                            data-field="quantity"
+                            onClick={decrement}
+                          />
+                          <input
+                            type="text"
+                            readOnly
+                            value={infantCount}
+                            name="quantity"
+                            class="quantity-field border-0 text-center w-25"
+                          />
+                          <input
+                            name="infant"
+                            type="button"
+                            value="+"
+                            class="button-plus border rounded-circle icon-shape icon-sm lh-0"
+                            data-field="quantity"
+                            onClick={increment}
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
               <a href="" className="btn btn-primary d-block w-100 mt-5">
