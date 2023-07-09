@@ -42,21 +42,6 @@ const Navbar = () => {
                         <li className="nav-item">
                             <a className="nav-link" href="/">HOME</a>
                         </li>
-                        <li className="nav-item">
-                            <a className="nav-link" href="#">PAGES</a>
-                        </li>
-                        <li className="nav-item">
-                            <a className="nav-link" href="/hotels">HOTELS</a>
-                        </li>
-                        <li className="nav-item">
-                            <a className="nav-link" href="#">BLOGS</a>
-                        </li>
-                        <li className="nav-item">
-                            <a className="nav-link" href="#">SERVICES</a>
-                        </li>
-                        <li className="nav-item">
-                            <a className="nav-link" href="/property">Property</a>
-                        </li>
                     </ul>
                 </div>
                 <div className="navbar-collapse collapse order-3 dual-collapse2 flex-grow-1">
@@ -67,11 +52,11 @@ const Navbar = () => {
                                {userDetails.user.first_name} {userDetails.user.last_name}<b className="caret"></b>
                             </button>
                             <div className="dropdown-menu dropdown-menu-lg-end">
-                                <a href="/profile" className="dropdown-item"><i className="fa fa-user-o"></i> Profile</a>
+                                <a href="/profile" className="dropdown-item"><i className="fa fa-user"></i> Profile</a>
                                 <a href="#" className="dropdown-item"><i className="fa fa-home"></i> Properties</a>
                                 <a href="/reservations" className="dropdown-item"><i className="fa fa-calendar"></i> Reservations</a>
-                                <a href="/booking-requests" className="dropdown-item"><i className="fa fa-calendar"></i> Booking Requests</a>
-                                <a href="/transactions" className="dropdown-item"><i className="fa fa-money"></i> Transactions</a>
+                                <a href="/booking-requests" className="dropdown-item"><i className="fa fa-check"></i> Booking Requests</a>
+                                <a href="/transactions" className="dropdown-item"><i className="fa fa-euro"></i> Transactions</a>
                                 <a className="dropdown-divider"></a>
                                 <a href="#" onClick={handleSignout} className="dropdown-item"><i className="material-icons">&#xE8AC;</i> Logout</a>
                             </div>

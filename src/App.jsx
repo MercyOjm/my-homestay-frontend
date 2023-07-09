@@ -1,12 +1,13 @@
 import "bootstrap/dist/css/bootstrap.css";
 
 import "bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css";
+import "bootstrap-slider/dist/css/bootstrap-slider.min.css";
 import "./App.css";
 import Navbar from "./components/navbar/Navbar";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import Home from "./pages/home/Home";
 
-import HotelPage from "./pages/hotels/hotels";
+import PropertiesList from "./pages/properties/properties";
 
 import Footer from "./components/footer/Footer";
 import Signin from "./pages/signin/Signin";
@@ -66,8 +67,8 @@ function App() {
           element: <BookingRequest />,
         },
         {
-          path: "/hotels",
-          element: <Hotels />,
+          path: "/properties",
+          element: <PropertiesList />,
         },
         {
           path: "/property/:propertyId",
