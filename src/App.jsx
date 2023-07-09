@@ -71,7 +71,7 @@ function App() {
           element: <PropertiesList />,
         },
         {
-          path: "/property/:propertyId",
+          path: "/properties/:propertyId",
           element: <ViewProperty/>,
         },
         {
