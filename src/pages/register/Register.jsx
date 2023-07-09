@@ -85,17 +85,21 @@ function Register() {
 
     setLoading(true);
     try {
-
-      await axios.post('http://localhost:4040/api/signup', {
-        firstName,
-        lastName,
-        email,
-        password, confirmPassword
-      }, {
-        withCredentials: true
-      });
-      console.log('Registration successful!');
-      navigate('/');
+      await axios.post(
+        "http://localhost:4040/api/signup",
+        {
+          firstName,
+          lastName,
+          email,
+          password,
+          confirmPassword,
+        },
+        {
+          withCredentials: true,
+        }
+      );
+      console.log("Registration successful!");
+      navigate("/");
     } catch (error) {
       if (error.response && error.response.data) {
         setErrorMessage(error.response.data);
