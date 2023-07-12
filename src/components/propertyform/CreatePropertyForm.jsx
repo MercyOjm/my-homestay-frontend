@@ -4,6 +4,8 @@ import "./createpropertyform.css";
 import { FaCloudUploadAlt, FaPlus, FaCar, FaMinus, FaBroom, FaWifi, FaGlobeAmericas, FaTv, FaBed, FaBath } from 'react-icons/fa';
 import { MdClose } from "react-icons/md";
 
+import { MdCloudUpload } from 'react-icons/md';
+
 const CreatePropertyForm = ({ onCreate }) => {
   const [propertyData, setPropertyData] = useState({
     kind: "",
@@ -114,6 +116,7 @@ const CreatePropertyForm = ({ onCreate }) => {
 
 
   return (
+    <div className="form container">
     <form onSubmit={handleSubmit}>
       <h2>What kind of place will you host?</h2>
 
@@ -148,62 +151,89 @@ const CreatePropertyForm = ({ onCreate }) => {
       <h2>Where do we find this place?</h2>
 
       <div className="input-row">
-        <input
-          type="text"
-          name="street"
-          placeholder="Street"
-          value={propertyData.street}
-          onChange={handleInputChange}
-          required
-        />
-        <input
-          type="text"
-          name="number"
-          placeholder="Number"
-          value={propertyData.number}
-          onChange={handleInputChange}
-          required
-        />
-      </div>
+  <div className="details-input">
+    <label htmlFor="street">Street</label>
+    <input
+      type="text"
+      id="street"
+      name="street"
+      placeholder="Enter street"
+      value={propertyData.street}
+      onChange={handleInputChange}
+      required
+    />
+  </div>
 
-      <div className="input-row">
-        <input
-          type="text"
-          name="postal"
-          placeholder="Postal Code"
-          value={propertyData.postal}
-          onChange={handleInputChange}
-          required
-        />
-        <input
-          type="text"
-          name="city"
-          placeholder="City"
-          value={propertyData.city}
-          onChange={handleInputChange}
-          required
-        />
-      </div>
+  <div className="details-input">
+    <label htmlFor="number">Number</label>
+    <input
+      type="text"
+      id="number"
+      name="number"
+      placeholder="Enter number"
+      value={propertyData.number}
+      onChange={handleInputChange}
+      required
+    />
+  </div>
+</div>
 
-      <div className="input-row">
-        <input
-          type="text"
-          name="state"
-          placeholder="State"
-          value={propertyData.state}
-          onChange={handleInputChange}
-          required
-        />
-        <input
-          type="text"
-          name="country"
-          placeholder="Country"
-          value={propertyData.country}
-          onChange={handleInputChange}
-          required
-        />
-      </div>
-      <h2>Add a description of your place.</h2>
+<div className="input-row">
+  <div className="details-input">
+    <label htmlFor="postal">Postal Code</label>
+    <input
+      type="text"
+      id="postal"
+      name="postal"
+      placeholder="Enter postal code"
+      value={propertyData.postal}
+      onChange={handleInputChange}
+      required
+    />
+  </div>
+
+  <div className="details-input">
+    <label htmlFor="city">City</label>
+    <input
+      type="text"
+      id="city"
+      name="city"
+      placeholder="Enter city"
+      value={propertyData.city}
+      onChange={handleInputChange}
+      required
+    />
+  </div>
+
+  <div className="details-input">
+    <label htmlFor="state">State</label>
+    <input
+      type="text"
+      id="state"
+      name="state"
+      placeholder="Enter state"
+      value={propertyData.state}
+      onChange={handleInputChange}
+      required
+    />
+  </div>
+</div>
+
+<div className="input-row">
+  <div className="details-input">
+    <label htmlFor="country">Country</label>
+    <input
+      type="text"
+      id="country"
+      name="country"
+      placeholder="Enter country"
+      value={propertyData.country}
+      onChange={handleInputChange}
+      required
+    />
+  </div>
+</div>
+<h2>Add a description of your place.</h2>
       <div className="input-row">
         <textarea
           name="description"
@@ -224,18 +254,22 @@ const CreatePropertyForm = ({ onCreate }) => {
         />
       </div>
 
+
+
+
       <h2>Upload your property pictures</h2>
 
-<div className="input-row">
-  <div className="image-upload">
-    <input type="file" accept="image/*" id="upload-input" onChange={handleImageUpload} />
-    <label htmlFor="upload-input">
-      <div className="upload-icon">
-        <FaCloudUploadAlt />
-      </div>
-      <div className="upload-label">Upload</div>
-    </label>
+      <div className="image-upload">
+  <label htmlFor="file-input" className="upload-icon">
+    <MdCloudUpload />
+  </label>
+  <div className="upload-input-wrapper">
+    <input id="file-input" type="file" />
+    <input type="text" className="upload-field" placeholder="" />
   </div>
+  <label htmlFor="file-input" className="upload-label">
+    Upload
+  </label>
 </div>
 
 <div className="image-preview">
@@ -265,186 +299,255 @@ const CreatePropertyForm = ({ onCreate }) => {
   </div>
 </div>
 
+
+
+
  <div>
 
    
 
-
  <h2>Add facilities available at your place.</h2>
 
-<div className="input-row">
-  <div className="details-input">
-    <input
-      type="number"
-      name="bedrooms"
-      value={propertyData.bedrooms}
-      onChange={handleChange}
-      min={0}
-    />
-    <label>Bedrooms</label>
-    <div className="increment-decrement">
-      {/* Increment and Decrement buttons */}
-      <button
-        type="button"
-        className="decrement-button round-button"
-        onClick={() => handleDecrement("bedrooms")}
-      >
-        <FaMinus />
-      </button>
-      <button
-        type="button"
-        className="increment-button round-button"
-        onClick={() => handleIncrement("bedrooms")}
-      >
-        <FaPlus />
-      </button>
+ <div className="input-row facilities-row">
+  <div className="details-input facility-item">
+    <div className="input-with-label">
+      <div className="increment-decrement">
+        <button
+          type="button"
+          className="decrement-button round-button"
+          onClick={() => handleDecrement("bedrooms")}
+        >
+          <FaMinus />
+        </button>
+      </div>
+      <div className="input-field">
+        <input
+          type="number"
+          name="bedrooms"
+          value={propertyData.bedrooms}
+          onChange={handleChange}
+          min={0}
+          placeholder="Bedrooms"
+          style={{
+            border: '1px solid transparent',
+            backgroundColor: 'white',
+            minWidth: '60px',
+            maxWidth: '70px',
+          }}
+        />
+        <label className="field-label">Bedrooms</label>
+        <div className="increment-decrement">
+          <button
+            type="button"
+            className="increment-button round-button"
+            onClick={() => handleIncrement("bedrooms")}
+          >
+            <FaPlus />
+          </button>
+        </div>
+      </div>
     </div>
   </div>
 
-  <div className="details-input">
-    <input
-      type="number"
-      name="bathrooms"
-      value={propertyData.bathrooms}
-      onChange={handleChange}
-      min={0}
-    />
-    <label>Bathrooms</label>
-    <div className="increment-decrement">
-      {/* Increment and Decrement buttons */}
-      <button
-        type="button"
-        className="decrement-button round-button"
-        onClick={() => handleDecrement("bathrooms")}
-      >
-        <FaMinus />
-      </button>
-      <button
-        type="button"
-        className="increment-button round-button"
-        onClick={() => handleIncrement("bathrooms")}
-      >
-        <FaPlus />
-      </button>
-    </div>
-  </div>
-</div>
-
-<div className="input-row">
-  <div className="details-input">
-    <input
-      type="number"
-      name="parking"
-      value={propertyData.parking}
-      onChange={handleChange}
-      min={0}
-    />
-    <label>Parking </label>
-    <div className="increment-decrement">
-      {/* Increment and Decrement buttons */}
-      <button
-        type="button"
-        className="decrement-button round-button"
-        onClick={() => handleDecrement("parking")}
-      >
-        <FaMinus />
-      </button>
-      <button
-        type="button"
-        className="increment-button round-button"
-        onClick={() => handleIncrement("parking")}
-      >
-        <FaPlus />
-      </button>
-    </div>
-  </div>
-  <h2>Other Details</h2>
-
-  <div className="details-input">
-    <input
-      type="number"
-      name="maxNights"
-      value={propertyData.maxNights}
-      onChange={handleChange}
-      min={0}
-    />
-    <label>Max Nights</label>
-    <div className="increment-decrement">
-      {/* Increment and Decrement buttons */}
-      <button
-        type="button"
-        className="decrement-button round-button"
-        onClick={() => handleDecrement("maxNights")}
-      >
-        <FaMinus />
-      </button>
-      <button
-        type="button"
-        className="increment-button round-button"
-        onClick={() => handleIncrement("maxNights")}
-      >
-        <FaPlus />
-      </button>
+  <div className="details-input facility-item">
+    <div className="input-with-label">
+      <div className="increment-decrement">
+        <button
+          type="button"
+          className="decrement-button round-button"
+          onClick={() => handleDecrement("bathrooms")}
+        >
+          <FaMinus />
+        </button>
+      </div>
+      <div className="input-field">
+        <input
+          type="number"
+          name="bathrooms"
+          value={propertyData.bathrooms}
+          onChange={handleChange}
+          min={0}
+          placeholder="Bathrooms"
+          style={{
+            border: '1px solid transparent',
+            backgroundColor: 'white',
+            minWidth: '60px',
+            maxWidth: '80px',
+          }}
+        />
+        <label className="field-label">Bathrooms</label>
+        <div className="increment-decrement">
+          <button
+            type="button"
+            className="increment-button round-button"
+            onClick={() => handleIncrement("bathrooms")}
+          >
+            <FaPlus />
+          </button>
+        </div>
+      </div>
     </div>
   </div>
 
-  <div className="details-input">
-    <input
-      type="number"
-      name="minNights"
-      value={propertyData.minNights}
-      onChange={handleChange}
-      min={0}
-    />
-    <label>Min Nights</label>
-    <div className="increment-decrement">
-      {/* Increment and Decrement buttons */}
-      <button
-        type="button"
-        className="decrement-button round-button"
-        onClick={() => handleDecrement("minNights")}
-      >
-        <FaMinus />
-      </button>
-      <button
-        type="button"
-        className="increment-button round-button"
-        onClick={() => handleIncrement("minNights")}
-      >
-        <FaPlus />
-      </button>
+  <div className="details-input facility-item">
+    <div className="input-with-label">
+      <div className="increment-decrement">
+        <button
+          type="button"
+          className="decrement-button round-button"
+          onClick={() => handleDecrement("parking")}
+        >
+          <FaMinus />
+        </button>
+      </div>
+      <div className="input-field">
+        <input
+          type="number"
+          name="parking"
+          value={propertyData.parking}
+          onChange={handleChange}
+          min={0}
+          placeholder="Parking"
+          style={{
+            border: '1px solid transparent',
+            backgroundColor: 'white',
+            minWidth: '80px',
+            maxWidth: '80px',
+          }}
+        />
+        <label className="field-label">Parking</label>
+        <div className="increment-decrement">
+          <button
+            type="button"
+            className="increment-button round-button"
+            onClick={() => handleIncrement("parking")}
+          >
+            <FaPlus />
+          </button>
+        </div>
+      </div>
     </div>
   </div>
 </div>
-</div>
 
-<div className="input-row">
-  <div className="details-input">
-    <input
-      type="number"
-      name="accommodates"
-      value={propertyData.accommodates}
-      onChange={handleChange}
-      min={0}
-    />
-    <label>Accommodates</label>
-    <div className="increment-decrement">
-      {/* Increment and Decrement buttons */}
-      <button
-        type="button"
-        className="decrement-button round-button"
-        onClick={() => handleDecrement("accommodates")}
-      >
-        <FaMinus />
-      </button>
-      <button
-        type="button"
-        className="increment-button round-button"
-        onClick={() => handleIncrement("accommodates")}
-      >
-        <FaPlus />
-      </button>
+
+
+
+  <div>
+  <div className="input-row">
+    <h2>Other Details</h2>
+  </div>
+
+  <div className="input-row">
+    <div className="details-input">
+      <div className="input-with-label">
+        <div className="increment-decrement">
+          <button
+            type="button"
+            className="decrement-button round-button"
+            onClick={() => handleDecrement("maxNights")}
+          >
+            <FaMinus />
+          </button>
+        </div>
+        <div className="input-field">
+          <input
+            type="number"
+            name="maxNights"
+            value={propertyData.maxNights}
+            onChange={handleChange}
+            min={0}
+            style={{ border: '1px solid transparent', backgroundColor: 'white',minWidth:'100px', maxWidth:'100px' }}
+          />
+          <label>Max-Nights</label>
+          <div className="increment-decrement">
+            <button
+              type="button"
+              className="increment-button round-button"
+              onClick={() => handleIncrement("maxNights")}
+            >
+              <FaPlus />
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
+
+    <div className="details-input">
+      <div className="input-with-label">
+        <div className="increment-decrement">
+          <button
+            type="button"
+            className="decrement-button round-button"
+            onClick={() => handleDecrement("minNights")}
+          >
+            <FaMinus />
+          </button>
+        </div>
+        <div className="input-field">
+          <input
+            type="number"
+            name="minNights"
+            value={propertyData.minNights}
+            onChange={handleChange}
+            min={0}
+            style={{ border: '1px solid transparent', backgroundColor: 'white',minWidth:'100px', maxWidth:'100px' }}
+          />
+          <label>Min-Nights</label>
+          <div className="increment-decrement">
+            <button
+              type="button"
+              className="increment-button round-button"
+              onClick={() => handleIncrement("minNights")}
+            >
+              <FaPlus />
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div className="details-input">
+      <div className="input-with-label">
+        <div className="increment-decrement">
+          <button
+            type="button"
+            className="decrement-button round-button"
+            onClick={() => handleDecrement("accommodates")}
+          >
+            <FaMinus />
+          </button>
+        </div>
+        <div className="input-field">
+          <input
+            type="number"
+            name="accommodates"
+            value={propertyData.accommodates}
+            onChange={handleChange}
+            min={0}
+            style={{ border: '1px solid transparent', backgroundColor: 'white',minWidth:'100px', maxWidth:'100px' }}
+          />
+          <label>Accommodates</label>
+          <div className="increment-decrement">
+            <button
+              type="button"
+              className="increment-button round-button"
+              onClick={() => handleIncrement("accommodates")}
+            >
+              <FaPlus />
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+    
+    
   </div>
 </div>
 
@@ -546,6 +649,7 @@ const CreatePropertyForm = ({ onCreate }) => {
 
 
     </form>
+  </div>  
   );
 };
 

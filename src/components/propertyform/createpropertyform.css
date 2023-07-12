@@ -1,8 +1,10 @@
 .form {
-  max-width: 600px;
+  max-width: 80%;
   margin: 0 auto;
-  padding: 20px;
+  padding-left: 10%;
+  padding-right: 10%;
 }
+
 
 h2 {
   font-size: 20px;
@@ -19,19 +21,208 @@ h2 {
   margin-bottom: 15px;
 }
 
+.input-row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 15px;
+ 
+}
+
+.input-row textarea {
+  flex: 1;
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  background-color: #e4e4e4;
+}
+
+.input-row textarea[name="description"] {
+ 
+  height: 85px;
+  
+  resize: none; /* Disable textarea resizing */
+}
+
+.input-row textarea[name="detailedDescription"] {
+  height: 150px;
+  
+  resize: none; /* Disable textarea resizing */
+}
+.input-row.details-row {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  margin-bottom: 15px;
+  
+}
+
+.details-input {
+  flex-basis: calc(23.33% - 20px); /* 20px for the padding between items */
+  margin-right: 10px;
+  box-sizing: border-box;
+}
+
+.input-row .details-input {
+  flex: 1;
+  margin-right: 10px;
+ 
+}
+
+.input-row .details-input label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.input-row .details-input input {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  background-color: #e4e4e4;
+}
+
+
+
+.input-row.facilities-row {
+  flex: 0 0 28.33%;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  padding-right: 10px;
+}
+
+.details-input.facility-item {
+  
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  padding-right: 10px;
+}
+
+
+
+
+/* Updated CSS for Other Details */
+
+.other-details-row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 15px;
+}
+
+.other-details-row .details-input {
+  flex: 1;
+  margin-right: 10px;
+}
+
+.other-details-row .details-input label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.other-details-row .details-input input {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+/* New CSS for Max Nights, Min Nights, and Accommodates */
+
+.additional-details-row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 15px;
+}
+
+.additional-details-row .details-input {
+  flex: 1;
+  margin-right: 10px;
+}
+
+.additional-details-row .details-input label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.additional-details-row .details-input input {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+
+.input-row.facilities-row .details-input:last-child {
+  padding-right: 0;
+}
+
+.input-row.facilities-row .details-input:nth-child(4) {
+  width: 100%;
+  margin-right: 0;
+  padding-right: 0;
+}
+
+.address-row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 15px;
+}
+
+.address-row .input-field {
+  flex: 1;
+  margin-right: 10px;
+}
+
+.country-row {
+  margin-bottom: 15px;
+}
+
+.country-row label {
+  display: block;
+}
+
+.country-row input {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
 .button-row {
   display: flex;
+  
   justify-content: space-between;
-  align-items: center; /* Add this line to vertically center the items */
+  align-items: center;
+  flex-wrap: wrap;
   margin-bottom: 20px;
 }
 
+@media (max-width: 480px) {
+  .button-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
 .button-row button {
+
+  
+  
   padding: 10px 20px;
   font-size: 16px;
   border-radius: 5px;
   border: none;
   cursor: pointer;
+  width: 150px;
+  margin-bottom: 10px;
 }
 
 .button-row button i {
@@ -40,32 +231,6 @@ h2 {
 
 .button-row button.active {
   background-color: #ccc;
-}
-
-.country-select {
-  display: flex;
-  align-items: center;
-}
-
-.country-select input {
-  flex: 1;
-  padding: 10px;
-  font-size: 16px;
-  border-radius: 5px 0 0 5px;
-  border: none;
-}
-
-.country-select-btn {
-  padding: 10px 15px;
-  font-size: 16px;
-  border-radius: 0 5px 5px 0;
-  border: none;
-  background-color: #ccc;
-  cursor: pointer;
-}
-
-.country-select-btn i {
-  transform: rotate(90deg);
 }
 
 .submit-button {
@@ -78,6 +243,29 @@ h2 {
   cursor: pointer;
 }
 
+.round-button {
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+}
+
+.decrement-button {
+  margin-right: 5px;
+  margin-left: 5px;
+}
+
+.increment-button {
+  margin-left: 5px;
+}
+
+.field-label {
+
+  margin-left: 10%;
+  margin-bottom: 10p 
+  
+
+}
+
 /* Facility Buttons */
 .facilities-row {
   display: flex;
@@ -85,13 +273,68 @@ h2 {
   margin-bottom: 20px;
 }
 
-.facility-item {
-  width: 25%;
+.facilities-row .facility-item {
+  width: 23.33%;
   padding: 5px;
 }
 
-.facility-item button {
-  width: 100%;
+.facility-item {
+  width: 150px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+  .facility-item {
+    flex-basis: 50%;
+    padding-right: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .facility-item {
+    flex-basis: 100%;
+    margin-right: 0;
+  }
+}
+
+
+
+.facilities-row .facility-item button .property-button-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: orange;
+  padding: 5px;
+  width: 40px;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+.facilities-row .facility-item button .property-button-icon-svg {
+  flex-shrink: 0;
+  color: #fff;
+  align-items: center;
+}
+
+.facilities-row .facility-item button .property-button-text {
+  
+  margin-right: 10px;
+}
+
+.facilities-row .facility-item button:focus,
+.facilities-row .facility-item button:active {
+  box-shadow: 0 0 0 2px orange;
+}
+
+.facilities-row .facility-item button:hover {
+  background-color: #ccc;
+  color: #fff;
+}
+
+/* Property Buttons */
+.property-button {
   padding: 10px;
   font-size: 16px;
   border-radius: 5px;
@@ -105,60 +348,13 @@ h2 {
   outline: none;
 }
 
-.facility-item button .property-button-icon {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: orange;
-  padding: 5px;
-  border-radius: 5px;
-  margin-right: 10px;
-}
-
-.facility-item button .property-button-icon-svg {
-  flex-shrink: 0;
-  color: #fff;
-}
-
-.facility-item button .property-button-text {
-  margin-left: auto;
-  margin-right: 2px;
-}
-
-.facility-item button:focus,
-.facility-item button:active {
-  box-shadow: 0 0 0 2px orange;
-}
-
-.facility-item button:hover {
-  background-color: #ccc;
-  color: #fff;
-}
-
-
-/* Property Buttons */
-
-.property-button {
-  padding: 10px;
-  font-size: 16px;
-  border-radius: 5px;
-  border: none;
-  cursor: pointer;
-  background-color: #ccc;
-  color: #fff;
-  display: flex;
-  align-items: center;
-  position: relative;
-  outline: none; /* Remove default focus outline */
-}
-
 .property-button-icon {
   position: absolute;
   left: 0;
   top: 0;
   bottom: 0;
   display: flex;
-  justify-content: center; /* Use justify-content instead of align-items */
+  justify-content: center;
   background-color: orange;
   padding: 5px;
   border-radius: 5px 0 0 5px;
@@ -174,19 +370,90 @@ h2 {
   margin-left: 30px;
 }
 
-
 .property-button:focus,
 .property-button:active {
-  box-shadow: 0 0 0 2px orange; /* Add orange border on focus and active */
+  box-shadow: 0 0 0 2px orange;
 }
 
 .property-button:hover {
   background-color: #ccc;
   color: #fff;
 }
+.input-with-label {
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+}
+
+.input-with-label .label {
+  margin-right: 5px;
+  font-weight: bold;
+  flex-shrink: 0; /* Prevent label from growing */
+}
+
+.input-with-label .input-field {
+  flex: 1; /* Fill remaining space */
+  display: flex;
+  align-items: center;
+}
+
+.input-with-label .input-field input {
+  flex: 1; /* Fill remaining space */
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid ;
+}
+
+.input-with-label .input-field input.transparent-border {
+  /* Additional styles for input fields with transparent border */
+  border-color: transparent;
+}
+
+
+.input-with-label .increment-decrement {
+  display: flex;
+  align-items: center;
+  margin-left: 10px; /* Add space between field and buttons */
+}
+
+.input-with-label .increment-decrement button {
+  padding: 5px;
+  font-size: 14px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  background-color: #ccc;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 5px;
+  outline: none;
+  width: 30px;
+  height: 30px;
+}
+
+.increment-button {
+  margin-left: 5px;
+}
+
+.decrement-button {
+  margin-right: 5px;
+}
+
+
+
+.input-with-label .increment-decrement button:focus,
+.input-with-label .increment-decrement button:active {
+  box-shadow: 0 0 0 2px orange;
+}
+
+.input-with-label .increment-decrement button:hover {
+  background-color: #999;
+}
 
 /* Image Upload and Preview */
-
 .image-upload {
   display: flex;
   align-items: center;
@@ -211,6 +478,14 @@ h2 {
   color: #fff;
 }
 
+.upload-input-wrapper {
+  
+  display: flex;
+  align-items: center;
+  margin-top: -8px;
+  width: 80%;
+}
+
 .upload-label {
   padding: 10px 20px;
   font-size: 16px;
@@ -219,17 +494,28 @@ h2 {
   background-color: orange;
   color: #fff;
   cursor: pointer;
+  margin-left: 20px;
+}
+
+.upload-field {
+  flex: 1;
+  display: flex;
+  align-items: center;
 }
 
 .image-preview {
   display: flex;
+
   margin-top: 20px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 100%;
 }
 
 .image-item {
   position: relative;
-  width: 150px;
-  height: 90px;
+  width: 140px;
+  height: 140px;
   margin-right: 10px;
   margin-bottom: 10px;
   background-color: #ccc;
@@ -269,281 +555,54 @@ h2 {
 
 @media (max-width: 768px) {
   .facility-item {
-    width: 50%;
+    width: 0%;
   }
+  .details-input.facility-item {
+    flex-basis: 50%;
+    padding-right: 0;
+  }
+  
+    .details-input {
+      flex-basis: 50%;
+      margin-right: 0;
+    }
+
+    @media (max-width: 480px) {
+      .input-row.details-row .details-input {
+        flex-basis: 100%;
+        margin-right: 0;
+      }  
+    }
+  
 }
-.form {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
-  }
-  
-  h2 {
-    font-size: 20px;
-    margin-bottom: 20px;
-  }
-  
-  .label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 5px;
-  }
-  
-  .input-field {
-    margin-bottom: 15px;
-  }
-  
-  .button-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center; /* Add this line to vertically center the items */
-    margin-bottom: 20px;
-  }
-  
-  .button-row button {
-    padding: 10px 20px;
-    font-size: 16px;
-    border-radius: 5px;
-    border: none;
-    cursor: pointer;
-  }
-  
-  .button-row button i {
-    margin-right: 5px;
-  }
-  
-  .button-row button.active {
-    background-color: #ccc;
-  }
-  
-  .country-select {
-    display: flex;
-    align-items: center;
-  }
-  
-  .country-select input {
-    flex: 1;
-    padding: 10px;
-    font-size: 16px;
-    border-radius: 5px 0 0 5px;
-    border: none;
-  }
-  
-  .country-select-btn {
-    padding: 10px 15px;
-    font-size: 16px;
-    border-radius: 0 5px 5px 0;
-    border: none;
-    background-color: #ccc;
-    cursor: pointer;
-  }
-  
-  .country-select-btn i {
-    transform: rotate(90deg);
-  }
-  
-  .submit-button {
-    padding: 10px 20px;
-    font-size: 18px;
-    border-radius: 5px;
-    border: none;
-    background-color: #3498db;
-    color: #fff;
-    cursor: pointer;
-  }
-  
-  /* Facility Buttons */
-  .facilities-row {
-    display: flex;
-    flex-wrap: wrap;
-    margin-bottom: 20px;
-  }
-  
-  .facility-item {
-    width: 25%;
-    padding: 5px;
-  }
-  
-  .facility-item button {
-    width: 100%;
-    padding: 10px;
-    font-size: 16px;
-    border-radius: 5px;
-    border: none;
-    cursor: pointer;
-    background-color: #ccc;
-    color: #fff;
-    display: flex;
-    align-items: center;
-    position: relative;
-    outline: none;
-  }
-  
-  .facility-item button .property-button-icon {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: orange;
-    padding: 5px;
-    border-radius: 5px;
+
+@media (max-width: 768px) {
+  .details-input.facility-item,
+  .details-input:not(.facility-item) {
+    flex-basis: 50%;
     margin-right: 10px;
   }
-  
-  .facility-item button .property-button-icon-svg {
-    flex-shrink: 0;
-    color: #fff;
+
+  .details-input.facility-item:nth-child(2n),
+  .details-input:not(.facility-item):nth-child(2n) {
+    margin-right: 0;
   }
-  
-  .facility-item button .property-button-text {
-    margin-left: auto;
-    margin-right: 2px;
+
+  .details-input.facility-item:last-child,
+  .details-input:not(.facility-item):last-child {
+    flex-basis: 100%;
+    margin-right: 0;
   }
-  
-  .facility-item button:focus,
-  .facility-item button:active {
-    box-shadow: 0 0 0 2px orange;
-  }
-  
-  .facility-item button:hover {
-    background-color: #ccc;
-    color: #fff;
-  }
-  
-  
-  /* Property Buttons */
-  
-  .property-button {
-    padding: 10px;
-    font-size: 16px;
-    border-radius: 5px;
-    border: none;
-    cursor: pointer;
-    background-color: #ccc;
-    color: #fff;
-    display: flex;
-    align-items: center;
-    position: relative;
-    outline: none; /* Remove default focus outline */
-  }
-  
-  .property-button-icon {
-    position: absolute;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    display: flex;
-    justify-content: center; /* Use justify-content instead of align-items */
-    background-color: orange;
-    padding: 5px;
-    border-radius: 5px 0 0 5px;
-    z-index: 1;
-  }
-  
-  .property-button-icon svg {
-    flex-shrink: 0;
-    color: #fff;
-  }
-  
-  .property-button-text {
-    margin-left: 30px;
-  }
-  
-  
-  .property-button:focus,
-  .property-button:active {
-    box-shadow: 0 0 0 2px orange; /* Add orange border on focus and active */
-  }
-  
-  .property-button:hover {
-    background-color: #ccc;
-    color: #fff;
-  }
-  
-  /* Image Upload and Preview */
-  
-  .image-upload {
-    display: flex;
-    align-items: center;
-  }
-  
-  .image-upload input[type="file"] {
-    display: none;
-  }
-  
-  .upload-icon {
-    width: 30px;
-    height: 30px;
-    background-color: orange;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 5px 0 0 5px;
-    cursor: pointer;
-  }
-  
-  .upload-icon svg {
-    color: #fff;
-  }
-  
-  .upload-label {
-    padding: 10px 20px;
-    font-size: 16px;
-    border-radius: 0 5px 5px 0;
-    border: none;
-    background-color: orange;
-    color: #fff;
-    cursor: pointer;
-  }
-  
-  .image-preview {
-    display: flex;
-    margin-top: 20px;
-  }
-  
-  .image-item {
-    position: relative;
-    width: 150px;
-    height: 90px;
-    margin-right: 10px;
-    margin-bottom: 10px;
-    background-color: #ccc;
-  }
-  
-  .image-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  
-  .remove-button {
-    position: absolute;
-    top: 5px;
-    right: 5px;
-    background-color: rgba(0, 0, 0, 0.5);
-    border: none;
-    border-radius: 50%;
-    width: 24px;
-    height: 24px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .remove-button:hover {
-    background-color: rgba(0, 0, 0, 0.8);
-  }
-  
-  .remove-button svg {
-    color: #fff;
-    font-size: 16px;
-  }
-  
-  @media (max-width: 768px) {
-    .facility-item {
-      width: 50%;
+
+  @media (max-width: 480px) {
+    .details-input.facility-item,
+    .details-input:not(.facility-item) {
+      flex-basis: 100%;
+      margin-right: 0;
     }
   }
-  
+}
+
+
+
+
