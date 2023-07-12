@@ -1,9 +1,16 @@
 import { useState, useEffect } from "react";
 import "./payments.css";
+import { useNavigate } from "react-router-dom";
+import { useProfileDispatch, useProfileState } from "../../contexts";
+import { MdFlightLand, MdLocalTaxi } from "react-icons/md";
+import { requestBooking } from "../../contexts/action";
 
 const Payment = () => {
   const [paymentMethod, setPaymentMethod] = useState("");
   const [showDropdown, setShowDropdown] = useState(false);
+  const { booking, user, loading } = useProfileState();
+  const dispatch = useProfileDispatch();
+  const one_day = 1000 * 60 * 60 * 24;
 
   const handleInputChange = (e) => {
     setPaymentMethod(e.target.value);
@@ -23,7 +30,13 @@ const Payment = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-
+  const totalDays = (booking) => {
+    console.log(Date.parse(booking.end_date));
+    var totalTime =
+      Date.parse(booking.end_date) - Date.parse(booking.start_date);
+    const totalDay = Math.round(totalTime / one_day);
+    return totalDay;
+  };
   const calculateTotalPrice = () => {
     // Your calculation logic here
     const basePrice = 100;
@@ -32,99 +45,94 @@ const Payment = () => {
     const total = basePrice + cleaningFee + serviceFee;
     return total;
   };
+  const calcAmount = (booking) => {
+    const totalAmount = totalDays(booking) * booking.property.price;
+    const sumOfCharges =
+      totalAmount +
+      (booking.property.cleaning_fee || 0) +
+      (booking.property.security_deposit || 0);
+    return sumOfCharges;
+  };
 
+  const sendBookingRequest = () => {
+    const requestBody = {
+      propertyId: booking.property._id,
+      start_date: booking.start_date,
+      end_date: booking.end_date,
+      guestId: user._id,
+      adults: booking.adults,
+      childs: booking.childs,
+    };
+    requestBooking(dispatch, requestBody);
+  };
   return (
-    <div className="container ">
-      <h1 className="text-center text-success my-5">Confirm and Pay</h1>
-      <div className="container">
-        <div className="row">
-          <div className="col-md-6">
-            <h4>Your Trip</h4>
-            <div className="card" style={{ width: "100%" }}>
-              <ul className="list-group list-group-flush">
-                <li className="list-group-item">
-                  Dates{" "}
-                  <span
-                    className="btn btn-primary px-2"
-                    style={{ marginLeft: "71%" }}
-                  >
-                    Edit
-                  </span>
-                </li>
-                <li className="list-group-item">
-                  Start-date:{" "}
-                  <span class="px-2" style={{ marginLeft: "54%" }}>
-                    06-07-2023
-                  </span>
-                </li>
-                <li className="list-group-item">
-                  End-date:{" "}
-                  <span class="px-2" style={{ marginLeft: "55%" }}>
-                    06-07-2023
-                  </span>
-                </li>
-                <li className="list-group-item">
-                  Guests{" "}
-                  <span
-                    className="btn btn-primary px-2"
-                    style={{ marginLeft: "69%" }}
-                  >
-                    Edit
-                  </span>
-                </li>
-                <li className="list-group-item">
-                  Number of guest{" "}
-                  <span className="px-2" style={{ marginLeft: "56%" }}>
-                    6
-                  </span>
-                </li>
-                <li className="list-group-item">
-                  Extra people{" "}
-                  <span className="px-2" style={{ marginLeft: "64%" }}>
-                    2
-                  </span>
-                </li>
-              </ul>
-            </div>
+    <div className="container-md mt-5">
+      <div className="row">
+        <h4>Confirm and Pay</h4>
+        <span className=" mt-4">Your trip</span>
+        <div className="col-6 mt-3">
+          <div className=" d-flex  justify-content-between">
+            <span>
+              <strong>Dates</strong>
+            </span>
+            <button
+              className="btn btn-secondary btn-sm"
+              role="button"
+              aria-disabled="true"
+            >
+              Edit
+            </button>
           </div>
-          <div className="col-md-6">
-            <h4>Price Details</h4>
-            <div className="card" style={{ width: "100%" }}>
+          <div className=" d-flex  justify-content-between mt-2">
+            <span>Start-Dates:</span>
+            <span>{booking.start_date}</span>
+          </div>
+          <div className=" d-flex  justify-content-between mt-3">
+            <span>End-Dates:</span>
+            <span>{booking.end_date}</span>
+          </div>
+          <div className=" d-flex  justify-content-between mt-3">
+            <span>
+              <strong>Guests</strong>
+            </span>
+            <button
+              className="btn btn-secondary btn-sm"
+              role="button"
+              aria-disabled="true"
+            >
+              Edit
+            </button>
+          </div>
+          <div className="">
+            {" "}
+            {(booking.adults || 0) +
+              " Adults, " +
+              " Child, " +
+              (booking.infant || 0) +
+              " Infant"}
+          </div>
+          <div className="payment-form mt-4  border-top border-bottom ">
+            <div className="d-flex flex-row justify-content-between mt-3 
+            ">
+            <label htmlFor="paymentInput">
+              <strong>Payment Method:</strong>
+            </label>
+            <div class="radio" data-value="credit">
               <img
-                src="https://www.airbnb.com/rooms/10006546"
-                className="card-img-top"
-                alt="booking-image"
+                src="https://i.imgur.com/28akQFX.jpg"
+                width="100px"
+                height="50px"
               />
-              <div className="card-body">
-                <h5 className="card-title">Ribeira Charming Duplex</h5>
-                <p className="card-text">
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
-                </p>
-              </div>
-              <ul className="list-group list-group-flush">
-                <li className="list-group-item">
-                  Price <span style={{ marginLeft: "65%" }}>€ 100</span>
-                </li>
-                <li className="list-group-item">
-                  Cleaning Fee <span style={{ marginLeft: "52%" }}>€ 50</span>
-                </li>
-                <li className="list-group-item">
-                  Service Fee <span style={{ marginLeft: "55%" }}>€ 10 </span>
-                </li>
-                <li className="list-group-item">
-                  Total:{" "}
-                  <span style={{ marginLeft: "65%" }}>
-                    € {calculateTotalPrice()}{" "}
-                  </span>
-                </li>
-              </ul>
             </div>
-          </div>
-          <hr />
-          <div className="payment-form">
-            <label htmlFor="paymentInput">Payment Method:</label>
-            <div class="input-group mb-3">
+            <div class="radio" data-value="paypal">
+              <img
+                src="https://i.imgur.com/5QFsx7K.jpg"
+                width="100px"
+                height="50px"
+              />
+            </div>
+            </div>
+            <div class="input-group mb-4 ">
               <input
                 type="text"
                 class="form-control"
@@ -158,99 +166,116 @@ const Payment = () => {
                 )}
               </ul>
             </div>
-            <h5 style={{ marginTop: "100px" }}>Cancellation Policy</h5>
-            <h6 style={{ marginTop: "20px" }}>
-              Free cancellation until 24 hours before check-in
-            </h6>
-            <div
-              class="container-md bg-secondary border border-end-0 bg-opacity-10"
-              style={{ marginTop: "20px" }}
-            >
-              <h4>Add to your booking</h4>
-              <div class="form-check">
-                <input
-                  class="form-check-input"
-                  type="checkbox"
-                  value=""
-                  id="flexCheckDefault"
+          </div>
+        </div>
+        <div className="col-6 ">
+          <div className="right  p-3 mb-2 bg-secondary rounded">
+            <div className="row item border-bottom mb-3">
+              <div className="col-4 align-self-center my-3">
+                <img
+                  className="rounded float-left"
+                  src={booking.property.images[0].picture_url}
+                  alt="booking-image"
                 />
-                <label class="form-check-label" for="flexCheckDefault">
-                  I'm interested in booking a flight to my destination.
-                </label>
-                <p>
-                  Skip the stress of searching - we’ll add flight options
-                  (provided by bookMe.com) to your destination in your booking
-                  confirmation.{" "}
-                </p>
-              </div>
-              <div class="form-check">
-                <input
-                  class="form-check-input"
-                  type="checkbox"
-                  value=""
-                  id="flexCheckDefault"
-                />
-                <label class="form-check-label" for="flexCheckDefault">
-                  Want to book a taxi or shuttle ride in advance?{" "}
-                </label>
-                <p>
-                  Avoid surprises - get from the airport to your accommodation
-                  easily. We’ll add taxi options to your booking confirmation{" "}
-                </p>
               </div>
             </div>
 
-            <p style={{ marginTop: "25px" }}>
-              By selecting the button below, I agree to the updated terms of
-              service, payment terms of service, and acknowledge the privacy
-              policy.
-            </p>
-            <button
-              type="button"
-              class="btn btn-primary"
-              data-bs-toggle="modal"
-              data-bs-target="#exampleModal"
-            >
-              Request to book
-            </button>
-
-            <div
-              class="modal fade"
-              id="exampleModal"
-              tabindex="-1"
-              aria-labelledby="exampleModalLabel"
-              aria-hidden="true"
-            >
-              <div class="modal-dialog">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">
-                      Booking confirmation
-                    </h1>
-                    <button
-                      type="button"
-                      class="btn-close"
-                      data-bs-dismiss="modal"
-                      aria-label="Close"
-                    ></button>
-                  </div>
-                  <div class="modal-body">
-                    <h5>Your booking has been successfully confirmed!</h5>
-                  </div>
-                  <div class="modal-footer">
-                    <button
-                      type="button"
-                      class="btn btn-primary"
-                      data-bs-dismiss="modal"
-                    >
-                      OK
-                    </button>
-                    {/* <button type="button" class="btn btn-primary">Save changes</button> */}
-                  </div>
-                </div>
+            <div className="row lower mt-3 ">
+              <div className="col d-flex justify-content-between">
+                <h5 className=" text-left ">Price Details</h5>
+                <span className=" text-right">
+                  {" "}
+                  €{" "}
+                  {booking.property.price +
+                    " x " +
+                    totalDays(booking) +
+                    " = " +
+                    totalDays(booking) * booking.property.price}
+                </span>
+              </div>
+            </div>
+            <div className="row lower mt-3">
+              <span className="col text-left">Cleaning fee</span>
+              <span class="col text-right">
+                € {booking.property.cleaning_fee}
+              </span>
+            </div>
+            <div className="row lower mt-3">
+              <span className="col text-left">security deposit</span>
+              <span class="col text-right">
+                € {booking.property.security_deposit}
+              </span>
+            </div>
+            <div className="row lower mt-3">
+              <div className="col text-left">Total to pay</div>
+              <div className="col text-right">
+                <b> € {calcAmount(booking)} </b>
               </div>
             </div>
           </div>
+        </div>
+        <div className="row">
+          <div>
+            <h4 style={{ marginTop: "100px" }}>Cancellation Policy</h4>
+            <h6 style={{ marginTop: "20px" }}>
+              Free cancellation until 24 hours before check-in
+            </h6>
+          </div>
+          <div
+            className="container-md bg-secondary border border-end-0 bg-opacity-10"
+            style={{ marginTop: "20px" }}
+          >
+            <h4>Add to your booking</h4>
+            <div className="form-check d-flex flex-column">
+              <input
+                className="form-check-input"
+                type="checkbox"
+                value=""
+                id="flexCheckDefault"
+              />
+              <label className="form-check-label" for="flexCheckDefault">
+                I'm interested in booking a flight to my destination.
+              </label>
+              <MdFlightLand className=" d-flex justify-start"></MdFlightLand>
+              <p>
+                Skip the stress of searching - we’ll add flight options
+                (provided by bookMe.com) to your destination in your booking
+                confirmation.{" "}
+              </p>
+            </div>
+            <div className="form-check ">
+              <input
+                className="form-check-input"
+                type="checkbox"
+                value=""
+                id="flexCheckDefault"
+              />
+              <label className="form-check-label" for="flexCheckDefault">
+                Want to book a taxi or shuttle ride in advance?{" "}
+              </label>
+              <p>
+                Avoid surprises - get from the airport to your accommodation
+                easily. We’ll add taxi options to your booking confirmation
+              </p>
+              <MdLocalTaxi className="mr-10"></MdLocalTaxi>
+            </div>
+          </div>
+
+          <p style={{ marginTop: "25px" }}>
+            By selecting the button below, I agree to the updated terms of
+            service, payment terms of service, and acknowledge the privacy
+            policy.
+          </p>
+
+          <button
+            type="button"
+            class="btn btn-primary"
+            data-bs-toggle="modal"
+            data-bs-target="#exampleModal"
+            onClick={sendBookingRequest}
+          >
+            Request to book
+          </button>
         </div>
       </div>
     </div>

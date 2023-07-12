@@ -101,11 +101,30 @@ export async function addReview(dispatch, property_id) {
   };
 
   let response = await axios(requestOptions);
-  console.log(response);
   if (response.data) {
     dispatch({ type: "ADD_REVIEW", payload: response.data });
     return response.data;
   }
 
   return;
+}
+export async function addBooking (dispatch, bookingRequest){
+  dispatch({ type: "BOOKING", payload: bookingRequest });
+}
+
+
+export async function requestBooking (dispatch, bookingRequest){
+  const requestOptions = {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    data: bookingRequest,
+    url: `${ROOT_URL}/booking`,
+  };
+
+  let response = await axios(requestOptions);
+  if (response.data) {
+    dispatch({ type: "BOOKING_COMPLETED", payload: response.data });
+    localStorage.setItem("currentUser", JSON.stringify(response.data.guest));
+    return response.data;
+  }
 }
