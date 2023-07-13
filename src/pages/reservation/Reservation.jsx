@@ -9,7 +9,7 @@ const Reservation = () => {
   const [guestBookings, setGuestBookings]= useState([])
   const getBookings = async ()=>{
     const bookings = await axios.get(
-      "http://localhost:4040/api/booking/"+userDetails.user._id+"/guest-bookings"
+      "https://bookme-backend.onrender.com/api/booking/"+userDetails.user._id+"/guest-bookings"
     );
     setGuestBookings(bookings.data);
   }
@@ -19,7 +19,7 @@ const Reservation = () => {
   },[])
   const cancelBooking=async (bookingId)=>{
     await axios.put(
-      "http://localhost:4040/api/booking/"+bookingId,
+      "https://bookme-backend.onrender.com/api/booking/"+bookingId,
       {
         status:'CANCELLED'
       }
@@ -109,9 +109,9 @@ const Reservation = () => {
                       </div>
                     </div>
                     <div>
-                      <span className="text-bold">By: </span>
+                    <span className="text-bold">Hosted By: </span>
                       <span className="text-bold">
-                        {booking.traveler.first_name}
+                        {booking.host.first_name}
                       </span>
                     </div>
                   </div>
@@ -175,9 +175,9 @@ const Reservation = () => {
                       </div>
                     </div>
                     <div>
-                      <span className="text-bold">By: </span>
+                      <span className="text-bold">Hosted By: </span>
                       <span className="text-bold">
-                        {booking.traveler.first_name}
+                        {booking.host.first_name}
                       </span>
                     </div>
                   </div>
@@ -237,10 +237,10 @@ const Reservation = () => {
                         </div>
                       </div>
                       <div>
-                        <span className="text-bold">By: </span>
-                        <span className="text-bold">
-                          {booking.traveler.first_name}
-                        </span>
+                      <span className="text-bold">Hosted By: </span>
+                      <span className="text-bold">
+                        {booking.host.first_name}
+                      </span>
                       </div>
                     </div>
                     <div className="col-2 align-items-center d-flex flex-row justify-content-around">

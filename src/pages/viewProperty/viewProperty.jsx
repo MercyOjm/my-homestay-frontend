@@ -13,7 +13,7 @@ import "react-date-range/dist/styles.css"; // main css file
 import "react-date-range/dist/theme/default.css"; // theme css file
 
 const ViewProperty = (props) => {
-  const [adultCount, setAdultCount] = useState(0);
+  const [adultCount, setAdultCount] = useState(1);
   const [childCount, setChildCount] = useState(0);
   const [infantCount, setInfantCount] = useState(0);
   const [guestCount, setGuestCount] = useState("Guests");

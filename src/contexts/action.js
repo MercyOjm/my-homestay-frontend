@@ -1,4 +1,4 @@
-const ROOT_URL = "http://localhost:4040/api";
+const ROOT_URL = "https://bookme-backend.onrender.com";
 import axios from "axios";
 
 export async function loginUser(dispatch, loginPayload) {
@@ -124,7 +124,6 @@ export async function requestBooking (dispatch, bookingRequest){
   let response = await axios(requestOptions);
   if (response.data) {
     dispatch({ type: "BOOKING_COMPLETED", payload: response.data });
-    localStorage.setItem("currentUser", JSON.stringify(response.data.guest));
     return response.data;
   }
 }

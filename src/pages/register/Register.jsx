@@ -86,7 +86,7 @@ function Register() {
     setLoading(true);
     try {
       await axios.post(
-        "http://localhost:4040/api/signup",
+        "https://bookme-backend.onrender.com/api/signup",
         {
           firstName,
           lastName,
@@ -128,7 +128,7 @@ function Register() {
 
     setEmailListLoading(true);
     try {
-      await axios.post("http://localhost:8080/users/subscribe", {
+      await axios.post("https://bookme-backend.onrender.com/users/subscribe", {
         email,
       });
       console.log("Subscription successful!");
@@ -296,41 +296,3 @@ function Register() {
 
 export default Register;
 
-// import  {useState} from 'react'
-// import axios from 'axios'
-// import "./Register.css"
-
-// const Register = () => {
-//   const [email, setEmail] = useState("");
-//   const [password, setPassword] = useState("")
-//   const [username, setUsername] = useState("")
-
-//   const handleSignup = async(e) => {
-//     e.preventDefault()
-
-//   try {
-//     const response = await axios.post("http://localhost:8080/users/signup", { username, email, password });
-//     console.log(response.data)
-//     console.log("You are signed up successfully!")
-//   } catch (error) {
-//     console.error(error)
-//   }
-// };
-
-//   return (
-//     <div className="login-container ">
-//       <h1>Sign up</h1>
-
-//       <input type="text" placeholder="Username" value={username} onChange={(e) => setUsername(e.target.value)}/>
-//       <input type="text" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} />
-//       <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)}/>
-
-//       <button type="submit" className="continue-button" onClick={handleSignup}>
-//         Register
-//       </button>
-//       </div>
-//   );
-
-// }
-
-// export default Register

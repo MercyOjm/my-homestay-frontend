@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import "./payments.css";
-import { useNavigate } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
 import { useProfileDispatch, useProfileState } from "../../contexts";
 import { MdFlightLand, MdLocalTaxi } from "react-icons/md";
 import { requestBooking } from "../../contexts/action";
@@ -9,6 +9,7 @@ const Payment = () => {
   const [paymentMethod, setPaymentMethod] = useState("");
   const [showDropdown, setShowDropdown] = useState(false);
   const { booking, user, loading } = useProfileState();
+  const navigate = useNavigate();
   const dispatch = useProfileDispatch();
   const one_day = 1000 * 60 * 60 * 24;
 
@@ -54,7 +55,7 @@ const Payment = () => {
     return sumOfCharges;
   };
 
-  const sendBookingRequest = () => {
+  const sendBookingRequest = async() => {
     const requestBody = {
       propertyId: booking.property._id,
       start_date: booking.start_date,
@@ -63,7 +64,8 @@ const Payment = () => {
       adults: booking.adults,
       childs: booking.childs,
     };
-    requestBooking(dispatch, requestBody);
+    await requestBooking(dispatch, requestBody);
+    navigate('/')
   };
   return (
     <div className="container-md mt-5">

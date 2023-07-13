@@ -110,8 +110,7 @@ export const ProfileReducer = (initialState, action) => {
         return {
             ...initialState,
             loading:false,
-            booking:initialState.booking,
-            user: action.payload.guest
+            booking:initialState.booking
         }
     default:
       throw new Error(`Unhandled action type: ${action.type}`);

@@ -9,7 +9,7 @@ const BookingRequest = () => {
   const [propertyBookings, setPropertyBookings]= useState([])
   const fetchData = async ()=>{
     const bookings = await axios.get(
-      "http://localhost:4040/api/booking/"+userDetails.user._id+"/property-bookings"
+      "https://bookme-backend.onrender.com/api/booking/"+userDetails.user._id+"/property-bookings"
     );
     setPropertyBookings(bookings.data);
   }
@@ -18,7 +18,7 @@ const BookingRequest = () => {
   },[])
   const acceptBooking=async (bookingId)=>{
     await axios.put(
-      "http://localhost:4040/api/booking/"+bookingId,
+      "https://bookme-backend.onrender.com/api/booking/"+bookingId,
       {
         status:'ACCEPTED'
       }
@@ -27,7 +27,7 @@ const BookingRequest = () => {
   }
   const rejectBooking=async (bookingId)=>{
     await axios.put(
-      "http://localhost:4040/api/booking/"+bookingId,
+      "https://bookme-backend.onrender.com/api/booking/"+bookingId,
       {
         status:'REJECTED'
       }
