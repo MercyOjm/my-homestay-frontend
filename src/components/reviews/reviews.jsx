@@ -110,7 +110,7 @@ const Reviews = (props) => {
      <img
        width="180"
        height="180"
-       src={review.reviewer.image ? `data:image/jpg;base64,${review.reviewer.image.picture_url}` : noimage}
+       src={review.reviewer.image ? `${review.reviewer.image.picture_url}` : noimage}
      />
    </div>
    <div class="testimonial-meta">

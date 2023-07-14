@@ -6,8 +6,12 @@ import dest3 from '../../images/destination-3.jpg';
 import dest4 from '../../images/destination-4.jpg';
 import dest5 from '../../images/destination-5.jpg';
 import dest6 from '../../images/destination-6.jpg';
+import axios from 'axios';
+import { useEffect, useState } from 'react';
 
 const TopDestination = () => {
+   
+     
     return (
         <div className="container-fluid py-5">
             <div className="container pt-5 pb-3">
@@ -17,22 +21,22 @@ const TopDestination = () => {
                 </div>
                 <div className="row">
                     <div className="col-lg-4 col-md-6 mb-4">
-                        <DestinationCard imgUrl={dest1}  city="Berlin"></DestinationCard>
+                        <DestinationCard imgUrl={dest1}  city="Berlin" slogan="Be Berliner"></DestinationCard>
                     </div>
                     <div className="col-lg-4 col-md-6 mb-4">
-                        <DestinationCard imgUrl={dest2}  city="Barcelona"></DestinationCard>
+                        <DestinationCard imgUrl={dest2}  city="Barcelona" slogan="Barcelona es Teva!"></DestinationCard>
                     </div>
                     <div className="col-lg-4 col-md-6 mb-4">
-                        <DestinationCard imgUrl={dest3}  city="Bangkok"></DestinationCard>
+                        <DestinationCard imgUrl={dest3}  city="London" slogan="The city of lights"></DestinationCard>
                     </div>
                     <div className="col-lg-4 col-md-6 mb-4">
-                        <DestinationCard imgUrl={dest4}  city="Palma"></DestinationCard>
+                        <DestinationCard imgUrl={dest4}  city="Paris" slogan="Fluctuat nec mergitur"></DestinationCard>
                     </div>
                     <div className="col-lg-4 col-md-6 mb-4">
-                        <DestinationCard imgUrl={dest5}  city="Arizona"></DestinationCard>
+                        <DestinationCard imgUrl={dest5}  city="Roma" slogan="Veni, vidi, vici"></DestinationCard>
                     </div>
                     <div className="col-lg-4 col-md-6 mb-4">
-                        <DestinationCard imgUrl={dest6}  city="Monaco"></DestinationCard>
+                        <DestinationCard imgUrl={dest6}  city="Madrid" slogan="Viva la Vida."></DestinationCard>
                     </div>
                 </div>
             </div>

@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import $ from "jquery";
 
 const Search = () => {
-  const [adultCount, setAdultCount] = useState(0);
+  const [adultCount, setAdultCount] = useState(2);
   const [childCount, setChildCount] = useState(0);
   const [infantCount, setInfantCount] = useState(0);
   const [guestCount, setGuestCount] = useState("Guests");

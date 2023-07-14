@@ -6,7 +6,7 @@ import carousal1 from '../../images/carousel-1.jpg';
 const Hero = () => {
     return (
         <div className="container-fluid p-0">
-            <section className="site-hero overlay" style= {{backgroundImage : `url(${carousal1})`}} data-stellar-background-ratio="0.5">
+            <section className="site-hero overlay" style= {{backgroundImage : `url(${carousal1})`, backgroundPosition:'bottom'}} data-stellar-background-ratio="0.5">
                 <div className="container">
                     <div className="row site-hero-inner justify-content-center align-items-center">
                         <div className="col-md-10 text-center" data-aos="fade-up">
