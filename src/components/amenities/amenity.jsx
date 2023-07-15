@@ -19,8 +19,6 @@ import {
   FaIntercom,
   FaUtensilSpoon,
   FaHotTub,
-  FaHouseLock,
-  FaFireExtinguisher,
   FaInternetExplorer,
   FaClock,
   FaSwimmingPool,
@@ -28,7 +26,7 @@ import {
   FaEthernet,
   FaUmbrellaBeach
 } from "react-icons/fa";
-import {  FaElevator} from 'react-icons/fa6'
+import {  FaElevator, FaWheelchair} from 'react-icons/fa6'
 import { CgSmartHomeHeat, CgSmartHomeRefrigerator } from "react-icons/cg";
 import {
   BiFirstAid,
@@ -41,7 +39,7 @@ import {
   BiCard,
   BiSolidLock,
 } from "react-icons/bi";
-import { GiGasStove, GiChickenOven, GiSaloon, GiElectricalSocket, GiBarbecue, GiGardeningShears, GiSoap } from "react-icons/gi";
+import { GiGasStove, GiChickenOven, GiSaloon, GiElectricalSocket, GiBarbecue, GiGardeningShears, GiSoap, GiFireplace } from "react-icons/gi";
 import { TbAirConditioning } from "react-icons/tb";
 import { PiCoatHanger } from "react-icons/pi";
 import { CgGym } from "react-icons/cg";
