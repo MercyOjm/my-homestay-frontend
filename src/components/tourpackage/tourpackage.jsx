@@ -12,7 +12,7 @@ const TourPackages = () => {
   const [topProperties, setTopProperties] = useState([]);
   const fetchData = async () => {
     const response = await axios.get(
-      "https://bookme-backend.onrender.com/api/properties/top-properties"
+      import.meta.env.VITE_API_URL+"/api/properties/top-properties"
     );
     setTopProperties(response.data);
   };

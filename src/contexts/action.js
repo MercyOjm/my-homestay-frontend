@@ -1,4 +1,4 @@
-const ROOT_URL = "https://bookme-backend.onrender.com/api";
+const ROOT_URL = import.meta.env.VITE_API_URL+'/api';
 import axios from "axios";
 
 export async function loginUser(dispatch, loginPayload) {

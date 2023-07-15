@@ -33,7 +33,7 @@ const PropertiesList = () => {
     try {
       setLoading(true);
       const response = await axios.get(
-        "https://bookme-backend.onrender.com/api/properties/search?city=" + city
+        import.meta.env.VITE_API_URL+"/api/properties/search?city=" + city
       );
       // Process the response or update the state with the filtered properties
       setResult(response.data);
@@ -88,7 +88,7 @@ const PropertiesList = () => {
     try {
       setLoading(true);
       const response = await axios.get(
-        "https://bookme-backend.onrender.com/api/properties/search?city=" +
+        import.meta.env.VITE_API_URL+"/api/properties/search?city=" +
           city +
           "&beds=" +
           bedCount +

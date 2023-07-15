@@ -9,7 +9,7 @@ const Reservation = () => {
   const [guestBookings, setGuestBookings]= useState([])
   const getBookings = async ()=>{
     const bookings = await axios.get(
-      "https://bookme-backend.onrender.com/api/booking/"+userDetails.user._id+"/guest-bookings"
+      import.meta.env.VITE_API_URL+"/api/booking/"+userDetails.user._id+"/guest-bookings"
     );
     setGuestBookings(bookings.data);
   }
@@ -19,7 +19,7 @@ const Reservation = () => {
   },[])
   const cancelBooking=async (bookingId)=>{
     await axios.put(
-      "https://bookme-backend.onrender.com/api/booking/"+bookingId,
+      import.meta.env.VITE_API_URL+"/api/booking/"+bookingId,
       {
         status:'CANCELLED'
       }

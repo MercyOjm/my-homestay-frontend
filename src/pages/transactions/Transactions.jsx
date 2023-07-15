@@ -8,7 +8,7 @@ const Transactions = () => {
   const [propertyBookings, setPropertyBookings]= useState([])
   const fetchData = async ()=>{
     const bookings = await axios.get(
-      "https://bookme-backend.onrender.com/api/booking/"+userDetails.user._id+"/property-bookings"
+      import.meta.env.VITE_API_URL+"/api/booking/"+userDetails.user._id+"/property-bookings"
     );
     setPropertyBookings(bookings.data);
   }

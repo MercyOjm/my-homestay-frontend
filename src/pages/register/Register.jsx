@@ -86,7 +86,7 @@ function Register() {
     setLoading(true);
     try {
       await axios.post(
-        "https://bookme-backend.onrender.com/api/signup",
+        import.meta.env.VITE_API_URL+"/api/signup",
         {
           firstName,
           lastName,
@@ -128,7 +128,7 @@ function Register() {
 
     setEmailListLoading(true);
     try {
-      await axios.post("https://bookme-backend.onrender.com/users/subscribe", {
+      await axios.post(import.meta.env.VITE_API_URL+"/api/users/subscribe", {
         email,
       });
       console.log("Subscription successful!");
