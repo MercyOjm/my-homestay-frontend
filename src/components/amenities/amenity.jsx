@@ -24,10 +24,11 @@ import {
   FaInternetExplorer,
   FaClock,
   FaSwimmingPool,
-  FaElevator,
+
   FaEthernet,
   FaUmbrellaBeach
 } from "react-icons/fa";
+import {  FaElevator} from 'react-icons/fa6'
 import { CgSmartHomeHeat, CgSmartHomeRefrigerator } from "react-icons/cg";
 import {
   BiFirstAid,
@@ -38,8 +39,9 @@ import {
   BiSolidParking,
   BiLaptop,
   BiCard,
+  BiSolidLock,
 } from "react-icons/bi";
-import { GiGasStove, GiChickenOven, GiSaloon, GiElectricalSocket, GiBarbecue, GiGardeningShears } from "react-icons/gi";
+import { GiGasStove, GiChickenOven, GiSaloon, GiElectricalSocket, GiBarbecue, GiGardeningShears, GiSoap } from "react-icons/gi";
 import { TbAirConditioning } from "react-icons/tb";
 import { PiCoatHanger } from "react-icons/pi";
 import { CgGym } from "react-icons/cg";
@@ -79,9 +81,8 @@ const amenitiesIcons = {
   "Hair dryer": <GiSaloon></GiSaloon>,
   "Paid parking off premises": <BiSolidParking></BiSolidParking>,
   "Dryer": <BiSolidDryer></BiSolidDryer>,
-  "Lock on bedroom door": <FaHouseLock></FaHouseLock>,
+  "Lock on bedroom door": <BiSolidLock></BiSolidLock>,
   "Laptop friendly workspace": <BiLaptop></BiLaptop>,
-  "Fire extinguisher": <FaFireExtinguisher></FaFireExtinguisher>,
   "Internet": <FaInternetExplorer></FaInternetExplorer>,
   "24-hour check-in": <FaClock></FaClock>,
   "Air conditioning": <TbAirConditioning></TbAirConditioning>,
