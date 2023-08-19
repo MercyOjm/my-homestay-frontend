@@ -1,4 +1,3 @@
-import RangeSlider from "react-range-slider-input";
 import "react-range-slider-input/dist/style.css";
 import { useEffect, useState, useMemo } from "react";
 import axios from "axios";
